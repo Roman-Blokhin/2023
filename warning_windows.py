@@ -1,13 +1,18 @@
 """I want to do some pop-up windows: information, warning and error"""
 
 from tkinter import *
+import tkinter.messagebox as mb
+
+def information ():
+    text = 'This is information window'
+    mb.showinfo ('Info', text)
 
 root = Tk ()
 root.geometry ('507x117+200+200')
 root.title ('Windows')
 root.config (bg = 'grey')
 
-Button (text = 'Information', font = ('Arial', 15, 'italic'), bd = 5, bg = 'pink', fg = 'white').\
+Button (text = 'Information', font = ('Arial', 15, 'italic'), bd = 5, bg = 'pink', fg = 'white', command=information).\
     grid (row= 0, column = 0, stick = 'wens', padx = 5, pady = 5)
 
 Button (text = 'Warning', font = ('Arial', 15, 'normal'), bd = 5).\
