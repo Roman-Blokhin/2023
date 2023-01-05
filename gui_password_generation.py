@@ -11,6 +11,13 @@ def generate ():
     name.insert(0, password)
     value = name.get()
     print (value)
+    if value [-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890' \
+                         'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ':
+        name.delete(0, END)
+        name.insert(0, password)
+        # value = name.get()
+        # print(value)
+# TODO: СДЕЛАТЬ ТАК, ЧТОБЫ МЫ ПОЛУЧАЛИ В КОНСОЛЬ НЕ СДВОЕННЫЙ ПАРОЛЬ, А ПОСТОЯННО НОВЫЙ
 
 root = Tk ()
 root.geometry ('300x100+200+200')
