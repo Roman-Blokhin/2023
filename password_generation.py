@@ -3,8 +3,8 @@
 import random as r
 
 chars = ('+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
-         'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ')
+         'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ') # указываем переменную с символами
 
-password = r.sample (chars, 10)
-password = ''.join(password)
+password = r.sample (chars, 10) # sample отвечает за перемешивание, далее число - сколько символов будет пароль
+password = ''.join(password) # прописываем, каким символом будут связаны наши элементы пароля
 print (password)
