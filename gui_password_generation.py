@@ -6,6 +6,12 @@ root = Tk ()
 root.geometry ('200x200+200+200')
 root.title ('Password Generation')
 
-btn1 = Button(text='Generate').grid(row=0, column=0)
+btn1 = Button(text='Generate', bd = 2).grid(row=0, column=0)
+
+en = Entry (root, width = 15, justify=RIGHT, bd = 2)
+en.grid (row=0, column=1)
+
+root.grid_columnconfigure(0, minsize=80)
+root.grid_columnconfigure(1, minsize=80)
 
 root.mainloop()
