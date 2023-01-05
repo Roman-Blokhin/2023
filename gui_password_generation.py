@@ -9,6 +9,8 @@ def generate ():
     password = r.sample(chars, 10)
     password = ''.join(password)
     name.insert(0, password)
+    value = name.get()
+    print (value)
 
 root = Tk ()
 root.geometry ('200x200+200+200')
