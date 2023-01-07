@@ -9,8 +9,18 @@ def add_digit (digit):
     entry.delete (0, END)
     entry.insert (0, value)
 
+def add_operation (operation):
+    value = entry.get ()
+    if value [-1] in '+-/*':
+        value = value [:1]
+    entry.delete (0, END)
+    entry.insert(0, value + operation)
+
 def make_button (digit):
     return Button(text= digit, bd=5, font=('Arial', 12, 'normal'), command=lambda: add_digit (digit))
+
+def make_button_operation (operation):
+    return Button(text= operation, bd=5, font=('Arial', 12, 'normal'), command=lambda: add_operation (operation))
 
 root = Tk ()
 root.title ('Formulas')
@@ -35,10 +45,10 @@ make_button (8).grid (row = 4, column = 1, stick = 'wens', pady=3, padx=5)
 make_button (9).grid (row = 4, column = 2, stick = 'wens', pady=3, padx=5)
 make_button (0).grid (row = 5, column = 0, stick = 'wens', pady=3, padx=5)
 
-make_button ('/').grid (row = 2, column = 3, stick = 'wens', pady=3, padx=5)
-make_button ('*').grid (row = 3, column = 3, stick = 'wens', pady=3, padx=5)
-make_button ('-').grid (row = 4, column = 3, stick = 'wens', pady=3, padx=5)
-make_button ('+').grid (row = 5, column = 3, stick = 'wens', pady=3, padx=5)
+make_button_operation ('/').grid (row = 2, column = 3, stick = 'wens', pady=3, padx=5)
+make_button_operation ('*').grid (row = 3, column = 3, stick = 'wens', pady=3, padx=5)
+make_button_operation ('-').grid (row = 4, column = 3, stick = 'wens', pady=3, padx=5)
+make_button_operation ('+').grid (row = 5, column = 3, stick = 'wens', pady=3, padx=5)
 
 make_button ('C').grid (row = 5, column = 1, stick = 'wens', pady=3, padx=5)
 
