@@ -4,6 +4,8 @@ from tkinter import *
 
 def add_digit (digit):
     value = entry.get () + str (digit)
+    if value [:1] == '0':
+        value = value [1:]
     entry.delete (0, END)
     entry.insert (0, value)
 
@@ -12,13 +14,14 @@ def make_button (digit):
 
 root = Tk ()
 root.title ('Formulas')
-root.geometry ('400x400+200+200')
+root.geometry ('500x300+200+200')
 root.config (bg = 'grey')
 
 Label (text = 'Помощник по математическим формулам', bg = 'grey', font = ('Arial', 12, 'normal'), fg = 'white')\
     .grid(row = 0, column = 0, columnspan = 6, stick = 'wens')
 
 entry = Entry (root, bd = 5, justify=RIGHT, font=('Arial', 12, 'normal'))
+entry.insert (0, 0)
 entry.grid(row = 1, column = 0, columnspan = 4, stick = 'wens', padx = 5, pady = 5)
 
 make_button (1).grid(row = 2, column = 0, stick = 'wens', pady=3, padx=5)
@@ -31,6 +34,15 @@ make_button (7).grid (row = 4, column = 0, stick = 'wens', pady=3, padx=5)
 make_button (8).grid (row = 4, column = 1, stick = 'wens', pady=3, padx=5)
 make_button (9).grid (row = 4, column = 2, stick = 'wens', pady=3, padx=5)
 make_button (0).grid (row = 5, column = 0, stick = 'wens', pady=3, padx=5)
+
+make_button ('/').grid (row = 2, column = 3, stick = 'wens', pady=3, padx=5)
+make_button ('*').grid (row = 3, column = 3, stick = 'wens', pady=3, padx=5)
+make_button ('-').grid (row = 4, column = 3, stick = 'wens', pady=3, padx=5)
+make_button ('+').grid (row = 5, column = 3, stick = 'wens', pady=3, padx=5)
+
+make_button ('C').grid (row = 5, column = 1, stick = 'wens', pady=3, padx=5)
+
+make_button ('=').grid (row = 5, column = 2, stick = 'wens', pady=3, padx=5)
 
 root.grid_columnconfigure(0, minsize = 50)
 root.grid_columnconfigure(1, minsize = 50)
