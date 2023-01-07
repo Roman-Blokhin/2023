@@ -4,20 +4,21 @@ from tkinter import *
 import random as r
 
 def generate ():
+    a = 10
     chars = ('+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
              'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ')
-    password = r.sample(chars, 10)
+    password = r.sample(chars, a)
     password = ''.join(password)
     name.insert(0, password)
     value = name.get()
-    print (value)
     if value [-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890' \
                          'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ':
         name.delete(0, END)
         name.insert(0, password)
-        # value = name.get()
-        # print(value)
-# TODO: СДЕЛАТЬ ТАК, ЧТОБЫ МЫ ПОЛУЧАЛИ В КОНСОЛЬ НЕ СДВОЕННЫЙ ПАРОЛЬ, А ПОСТОЯННО НОВЫЙ
+        value = name.get()
+        print(value)
+# TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ САМ ВЫБИРАТЬ СКОЛЬКО СИМВОЛОВ НУЖНО
+# TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ ВЫБРАТЬ, КАКИЕ СИМВОЛЫ И БУКВЫ ИСПОЛЬЗОВАТЬ
 
 root = Tk ()
 root.geometry ('300x100+200+200')
