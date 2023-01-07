@@ -16,11 +16,26 @@ def add_operation (operation):
     entry.delete (0, END)
     entry.insert(0, value + operation)
 
+def result ():
+    value = entry.get()
+    entry.delete(0, END)
+    entry.insert(0, eval (value))
+
+def clear ():
+    entry.delete(0, END)
+    entry.insert(0, '0')
+
 def make_button (digit):
     return Button(text= digit, bd=5, font=('Arial', 12, 'normal'), command=lambda: add_digit (digit))
 
 def make_button_operation (operation):
     return Button(text= operation, bd=5, font=('Arial', 12, 'normal'), command=lambda: add_operation (operation))
+
+def make_button_result (operation):
+    return Button(text= operation, bd=5, font=('Arial', 12, 'normal'), command= result)
+
+def make_button_clear (operation):
+    return Button(text= operation, bd=5, font=('Arial', 12, 'normal'), command= clear)
 
 root = Tk ()
 root.title ('Formulas')
@@ -31,7 +46,7 @@ Label (text = 'Помощник по математическим формула
     .grid(row = 0, column = 0, columnspan = 6, stick = 'wens')
 
 entry = Entry (root, bd = 5, justify=RIGHT, font=('Arial', 12, 'normal'))
-entry.insert (0, 0)
+entry.insert (0, '0')
 entry.grid(row = 1, column = 0, columnspan = 4, stick = 'wens', padx = 5, pady = 5)
 
 make_button (1).grid(row = 2, column = 0, stick = 'wens', pady=3, padx=5)
@@ -50,9 +65,9 @@ make_button_operation ('*').grid (row = 3, column = 3, stick = 'wens', pady=3, p
 make_button_operation ('-').grid (row = 4, column = 3, stick = 'wens', pady=3, padx=5)
 make_button_operation ('+').grid (row = 5, column = 3, stick = 'wens', pady=3, padx=5)
 
-make_button ('C').grid (row = 5, column = 1, stick = 'wens', pady=3, padx=5)
+make_button_clear ('C').grid (row = 5, column = 1, stick = 'wens', pady=3, padx=5)
 
-make_button ('=').grid (row = 5, column = 2, stick = 'wens', pady=3, padx=5)
+make_button_result ('=').grid (row = 5, column = 2, stick = 'wens', pady=3, padx=5)
 
 root.grid_columnconfigure(0, minsize = 50)
 root.grid_columnconfigure(1, minsize = 50)
