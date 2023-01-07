@@ -2,6 +2,14 @@
 
 from tkinter import *
 
+def add_digit (digit):
+    value = entry.get () + str (digit)
+    entry.delete (0, END)
+    entry.insert (0, value)
+
+def make_button (digit):
+    return Button(text= digit, bd=5, font=('Arial', 12, 'normal'), command=lambda: add_digit (digit))
+
 root = Tk ()
 root.title ('Formulas')
 root.geometry ('400x400+200+200')
@@ -10,19 +18,19 @@ root.config (bg = 'grey')
 Label (text = 'Помощник по математическим формулам', bg = 'grey', font = ('Arial', 12, 'normal'), fg = 'white')\
     .grid(row = 0, column = 0, columnspan = 6, stick = 'wens')
 
-entry = Entry (root, bd = 5, justify=RIGHT)
+entry = Entry (root, bd = 5, justify=RIGHT, font=('Arial', 12, 'normal'))
 entry.grid(row = 1, column = 0, columnspan = 4, stick = 'wens', padx = 5, pady = 5)
 
-Button (text='1', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 2, column = 0, stick = 'wens', pady=3, padx=5)
-Button (text='2', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 2, column = 1, stick = 'wens', pady=3, padx=5)
-Button (text='3', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 2, column = 2, stick = 'wens', pady=3, padx=5)
-Button (text='4', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 3, column = 0, stick = 'wens', pady=3, padx=5)
-Button (text='5', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 3, column = 1, stick = 'wens', pady=3, padx=5)
-Button (text='6', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 3, column = 2, stick = 'wens', pady=3, padx=5)
-Button (text='7', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 4, column = 0, stick = 'wens', pady=3, padx=5)
-Button (text='8', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 4, column = 1, stick = 'wens', pady=3, padx=5)
-Button (text='9', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 4, column = 2, stick = 'wens', pady=3, padx=5)
-Button (text='0', bd = 5, font = ('Arial', 10, 'normal')).grid (row = 5, column = 0, stick = 'wens', pady=3, padx=5)
+make_button (1).grid(row = 2, column = 0, stick = 'wens', pady=3, padx=5)
+make_button (2).grid (row = 2, column = 1, stick = 'wens', pady=3, padx=5)
+make_button (3).grid (row = 2, column = 2, stick = 'wens', pady=3, padx=5)
+make_button (4).grid (row = 3, column = 0, stick = 'wens', pady=3, padx=5)
+make_button (5).grid (row = 3, column = 1, stick = 'wens', pady=3, padx=5)
+make_button (6).grid (row = 3, column = 2, stick = 'wens', pady=3, padx=5)
+make_button (7).grid (row = 4, column = 0, stick = 'wens', pady=3, padx=5)
+make_button (8).grid (row = 4, column = 1, stick = 'wens', pady=3, padx=5)
+make_button (9).grid (row = 4, column = 2, stick = 'wens', pady=3, padx=5)
+make_button (0).grid (row = 5, column = 0, stick = 'wens', pady=3, padx=5)
 
 root.grid_columnconfigure(0, minsize = 50)
 root.grid_columnconfigure(1, minsize = 50)
