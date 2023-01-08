@@ -21,18 +21,27 @@ def random_word ():
     print ('entry_1: ' + word)
     # entry_1.delete(0, END)
 
+    # TODO: СДЕЛАТЬ ТАК, ЧТОБЫ ПОЛЕ ВВОДА 1 ОЧИЩАЛОСЬ
+
 def compare_entries ():
     score = 0
     value_1 = entry_2.get ()
     value_2 = entry_1.get ()
     if value_1 == value_2:
         Label (text = 'Good boy!', bg = 'pink').grid (row = 6, column = 0)
-        # score += 1
+        value_3 = entry_4.get ()
+        if value_3 [:1] == '0':
+            value_3 = value_3 [1:]
+        entry_4.delete(0, END)
+        score += 1
+        entry_4.insert(0, value_3 + str(score))
+        print ('entry_2: ' + value_1)
     else:
         Label(text='   Omg..   ', bg='pink').grid (row = 6, column = 0)
         # score -= 1
-    print ('entry_2: ' + value_1)
-    print (score)
+        print ('entry_2: ' + value_1)
+
+    #TODO: СДЕЛАТЬ ТАК, ЧТОБЫ ОЧКИ МЕНЯЛИСЬ, А ПОТОМ И УРОВЕНЬ
 
 def clear_entries():
     entry_1.get ()
