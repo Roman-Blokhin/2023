@@ -1,5 +1,7 @@
 from tkinter import *
 import random as r
+import os
+from time import sleep
 
 quantity = 3
 # -------------------------------- Def
@@ -8,9 +10,15 @@ def random_word ():
     chars = ('abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890')
     word = r.sample (chars, quantity)
     word = ''.join (word)
+
     value = entry_1.get ()
-    entry_1.delete (0, END)
+    if value [3:] in chars:
+        value = value [3:]
+    entry_1.delete(0, END)
     entry_1.insert (0, value + word)
+
+    print (word)
+    # entry_1.delete(0, END)
 
 # -------------------------------- Window configures
 
