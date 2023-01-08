@@ -4,6 +4,7 @@ import os
 from time import sleep
 
 quantity = 3
+
 # -------------------------------- Def
 
 def random_word ():
@@ -17,8 +18,17 @@ def random_word ():
     entry_1.delete(0, END)
     entry_1.insert (0, value + word)
 
-    print (word)
+    print ('entry_1: ' + word)
     # entry_1.delete(0, END)
+
+def compare_entries ():
+    value_1 = entry_2.get ()
+    value_2 = entry_1.get ()
+    if value_1 == value_2:
+        Label (text = 'Good boy!', bg = 'pink').grid (row = 6, column = 0)
+    else:
+        Label(text='   Omg..   ', bg='pink').grid (row = 6, column = 0)
+    print ('entry_2: ' + value_1)
 
 # -------------------------------- Window configures
 
@@ -40,7 +50,7 @@ Label (text = 'Введите слово: ', bg = 'pink', bd = 3).grid (row=3, c
 entry_2 = Entry (root, justify = RIGHT, bd = 3)
 entry_2.grid (row = 4, column = 0, stick = 'wens', padx = 5, pady = 5)
 
-Button (text = 'Сравнить', bd = 3).grid (row=5, column=0, stick = 'wens', padx = 5, pady = 5)
+Button (text = 'Сравнить', bd = 3, command = compare_entries).grid (row=5, column=0, stick = 'wens', padx = 5, pady = 5)
 
 # -------------------------------- Other configures
 
@@ -55,6 +65,7 @@ root.grid_rowconfigure(2, minsize = 30)
 root.grid_rowconfigure(3, minsize = 30)
 root.grid_rowconfigure(4, minsize = 30)
 root.grid_rowconfigure(5, minsize = 30)
+root.grid_rowconfigure(6, minsize = 30)
 
 # -------------------------------- The most important config =)
 
