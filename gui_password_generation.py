@@ -24,6 +24,71 @@ def generate ():
             name.insert(0, password)
             value = name.get()
 
+    elif one_value.get() == 1 and two_value.get() == 0 and three_value.get() == 0:
+        chars = ('abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        password = r.sample(chars, a)
+        password = ''.join(password)
+        name.insert(0, password)
+        value = name.get()
+        if value[-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890':
+            name.delete(0, END)
+            name.insert(0, password)
+            value = name.get()
+
+    elif one_value.get() == 0 and two_value.get() == 1 and three_value.get() == 0:
+        chars = ('+-/*!&$#?=@<>')
+        password = r.sample(chars, a)
+        password = ''.join(password)
+        name.insert(0, password)
+        value = name.get()
+        if value[-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890':
+            name.delete(0, END)
+            name.insert(0, password)
+            value = name.get()
+
+    elif one_value.get() == 0 and two_value.get() == 0 and three_value.get() == 1:
+        chars = ('1234567890')
+        password = r.sample(chars, a)
+        password = ''.join(password)
+        name.insert(0, password)
+        value = name.get()
+        if value[-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890':
+            name.delete(0, END)
+            name.insert(0, password)
+            value = name.get()
+
+    elif one_value.get() == 1 and two_value.get() == 1 and three_value.get() == 0:
+        chars = ('+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+        password = r.sample(chars, a)
+        password = ''.join(password)
+        name.insert(0, password)
+        value = name.get()
+        if value[-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890':
+            name.delete(0, END)
+            name.insert(0, password)
+            value = name.get()
+
+    elif one_value.get() == 1 and two_value.get() == 0 and three_value.get() == 1:
+        chars = ('abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890')
+        password = r.sample(chars, a)
+        password = ''.join(password)
+        name.insert(0, password)
+        value = name.get()
+        if value[-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890':
+            name.delete(0, END)
+            name.insert(0, password)
+            value = name.get()
+
+    elif one_value.get() == 0 and two_value.get() == 1 and three_value.get() == 1:
+        chars = ('+-/*!&$#?=@<>1234567890')
+        password = r.sample(chars, a)
+        password = ''.join(password)
+        name.insert(0, password)
+        value = name.get()
+        if value[-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890':
+            name.delete(0, END)
+            name.insert(0, password)
+            value = name.get()
 
     print(value)
     print('1.', one_value.get())
