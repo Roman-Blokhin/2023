@@ -26,7 +26,13 @@ def generate ():
 
 # TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ ВЫБРАТЬ, КАКИЕ СИМВОЛЫ И БУКВЫ ИСПОЛЬЗОВАТЬ
 
+def select_all ():
+    for i in [one, two, three]:
+        i.select ()
 
+def deselect_all ():
+    for i in [one, two, three]:
+        i.deselect ()
 
 # ------------------------------------------------------------- WINDOW
 
@@ -60,10 +66,19 @@ two.grid (row = 2, column = 0, stick = 'w', padx= 5, pady=5)
 three = Checkbutton (text = 'Numbers', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'))
 three.grid (row = 3, column = 0, stick = 'w', padx= 5, pady=5)
 
+
+Button (text = 'Select all', fg = 'black', bd = 2, bg = '#DCDCDC', font = ('Arial', 11, 'normal'), command = select_all)\
+    .grid (row = 1, column = 1, stick = 'wens', padx= 5, pady=5)
+
+Button (text = 'Deselect all', fg = 'black', bd = 2, bg = '#DCDCDC', font = ('Arial', 11, 'normal'), command = deselect_all)\
+    .grid (row = 2, column = 1, stick = 'wens', padx= 5, pady=5)
+
 # ------------------------------------------------------------- CONFIG
 
 root.grid_columnconfigure(0, minsize=150)
 root.grid_columnconfigure(1, minsize=150)
+root.grid_columnconfigure(2, minsize=150)
+root.grid_columnconfigure(3, minsize=150)
 
 # ------------------------------------------------------------- IMPORTANT
 
