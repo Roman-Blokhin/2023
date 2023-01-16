@@ -3,6 +3,8 @@
 from tkinter import *
 import random as r
 
+# ------------------------------------------------------------- GENERATE ZONE
+
 def generate ():
     a = 10
     chars = ('+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
@@ -17,13 +19,23 @@ def generate ():
         name.insert(0, password)
         value = name.get()
         print(value)
+
 # TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ САМ ВЫБИРАТЬ СКОЛЬКО СИМВОЛОВ НУЖНО
+
+# ------------------------------------------------------------- DEF
+
 # TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ ВЫБРАТЬ, КАКИЕ СИМВОЛЫ И БУКВЫ ИСПОЛЬЗОВАТЬ
+
+
+
+# ------------------------------------------------------------- WIMDOW
 
 root = Tk ()
 root.geometry ('300x100+200+200')
 root.title ('Password Generation')
 root.configure (bg = 'grey')
+
+# ------------------------------------------------------------- WIDJET
 
 Button(text='Generate', bd = 2, command=generate, bg = '#DCDCDC').\
     grid(row=1, column=0, stick = 'wens', padx= 5, pady=5)
@@ -37,7 +49,11 @@ Button (text = 'Clear', bd = 2, bg = '#DCDCDC', command = lambda: name.delete(0,
 Label (text='You can generate password for you needs', bg = 'grey', fg = 'white', font = ('Arial', 11, 'normal')).\
     grid (row=0,column=0, columnspan=2)
 
+# ------------------------------------------------------------- CONFIG
+
 root.grid_columnconfigure(0, minsize=150)
 root.grid_columnconfigure(1, minsize=150)
+
+# ------------------------------------------------------------- IMPORTANT
 
 root.mainloop()
