@@ -7,22 +7,16 @@ import random as r
 
 def generate ():
     a = 10
-    chars = ('+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'
-             'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ')
-    password = r.sample(chars, a)
-    password = ''.join(password)
-    name.insert(0, password)
-    value = name.get()
-    if value [-1:-10] in '+-/*!&$#?=@<>abcdefghijklnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890' \
-                         'абвгдеёжзийклмнопрстуфхцчшщэюяАБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЭЮЯ':
-        name.delete(0, END)
-        name.insert(0, password)
-        value = name.get()
-        print(value)
-        print('1.', one_value.get ())
-        print('2.', two_value.get ())
-        print('3.', three_value.get ())
 
+    if one_value.get () == 0 and two_value.get () == 0 and three_value.get () == 0:
+        name.delete(0, END)
+        name.insert(0, 'ERROR')
+        value = name.get()
+
+    print(value)
+    print('1.', one_value.get())
+    print('2.', two_value.get())
+    print('3.', three_value.get())
 
 # ------------------------------------------------------------- OTHER DEF
 
