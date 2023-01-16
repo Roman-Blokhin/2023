@@ -3,7 +3,7 @@
 from tkinter import *
 import random as r
 
-# ------------------------------------------------------------- GENERATE ZONE
+# ------------------------------------------------------------- GENERATE ZONE - DEF
 
 def generate ():
     a = 10
@@ -19,12 +19,12 @@ def generate ():
         name.insert(0, password)
         value = name.get()
         print(value)
+        print('1.', one_value.get ())
+        print('2.', two_value.get ())
+        print('3.', three_value.get ())
 
-# TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ САМ ВЫБИРАТЬ СКОЛЬКО СИМВОЛОВ НУЖНО
 
-# ------------------------------------------------------------- DEF
-
-# TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ ВЫБРАТЬ, КАКИЕ СИМВОЛЫ И БУКВЫ ИСПОЛЬЗОВАТЬ
+# ------------------------------------------------------------- OTHER DEF
 
 def select_all ():
     for i in [one, two, three]:
@@ -33,6 +33,10 @@ def select_all ():
 def deselect_all ():
     for i in [one, two, three]:
         i.deselect ()
+
+# ------------------------------------------------------------- TASK
+
+# TODO: СДЕЛАТЬ, ЧТОБЫ ПОЛЬЗОВАТЕЛЬ МОГ САМ ВЫБИРАТЬ СКОЛЬКО СИМВОЛОВ НУЖНО
 
 # ------------------------------------------------------------- WINDOW
 
@@ -57,13 +61,26 @@ Label (text='You can generate password for you needs', bg = 'grey', fg = 'white'
 
 # ------------------------------------------------------------- Checkbuttons and variables
 
-one = Checkbutton (text = 'Letters', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'))
+one_value = IntVar ()
+two_value = IntVar ()
+three_value = IntVar ()
+
+one = Checkbutton (text = 'Letters', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'),
+                   variable = one_value,
+                   offvalue = 0,
+                   onvalue = 1)
 one.grid (row = 1, column = 0, stick = 'w', padx= 5, pady=5)
 
-two = Checkbutton (text = 'Symbols', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'))
+two = Checkbutton (text = 'Symbols', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'),
+                   variable = two_value,
+                   offvalue = 0,
+                   onvalue = 1)
 two.grid (row = 2, column = 0, stick = 'w', padx= 5, pady=5)
 
-three = Checkbutton (text = 'Numbers', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'))
+three = Checkbutton (text = 'Numbers', bg = 'grey', fg = 'black', font = ('Arial', 11, 'normal'),
+                     variable = three_value,
+                     offvalue = 0,
+                     onvalue = 1)
 three.grid (row = 3, column = 0, stick = 'w', padx= 5, pady=5)
 
 
