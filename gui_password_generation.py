@@ -112,7 +112,7 @@ def deselect_all ():
 # ------------------------------------------------------------- WINDOW
 
 root = Tk ()
-root.geometry ('350x230+200+200')
+root.geometry ('330x230+200+200')
 root.title ('Password Generation')
 root.configure (bg = 'grey')
 
