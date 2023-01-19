@@ -8,6 +8,8 @@ def off():
     one.config(bg='black')
     two.config(bg='black')
     three.config(bg='black')
+    btn_1.config(state=DISABLED)
+    btn_2.config(state=NORMAL)
 
 
 def on():
@@ -15,6 +17,8 @@ def on():
     one.config(bg='white')
     two.config(bg='white')
     three.config(bg='white')
+    btn_1.config(state=NORMAL)
+    btn_2.config(state=DISABLED)
 
 
 root = Tk()
@@ -29,8 +33,10 @@ two.grid(row=1, column=3)
 three = Label(text=' ', bg='grey')
 three.grid(row=1, column=0)
 
-Button(bd=5, command=off).grid(row=1, column=1, sticky='wens', padx=5, pady=20)
-Button(bd=5, command=on).grid(row=1, column=2, sticky='wens', padx=5, pady=20)
+btn_1 = Button(bd=5, command=off)
+btn_1.grid(row=1, column=1, sticky='wens', padx=5, pady=20)
+btn_2 = Button(bd=5, command=on)
+btn_2.grid(row=1, column=2, sticky='wens', padx=5, pady=20)
 
 root.grid_columnconfigure(0, minsize=65)
 root.grid_columnconfigure(1, minsize=200)
