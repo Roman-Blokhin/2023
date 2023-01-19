@@ -10,13 +10,15 @@ def change():
     b = entry_change.get()
     c = entry_text.get(1.0, END)
     d = c.replace(a, b)
-    value_d = result.get(1.0, END)
+    e = len(c) - 1
+    # value_d = result.get(1.0, END)
     result.delete(1.0, END)
     result.insert(1.0, d)
     print('1. ', a)
     print('2. ', b)
     print('3. ', c)
     print('4. ', d)
+    Label (text=e, bg='#008B8B', font=('Arial', 12, 'bold'), fg='black').grid(row=5, column=2, sticky='e')
 
 
 # -------------------------------------------------- WINDOW
@@ -54,6 +56,8 @@ result.grid(row=4, column=1, columnspan=2, padx=5, pady=5, stick='w')
 # -----------------------
 start = Button(text='Внести изменения', font=('Arial', 12), command=change)
 start.grid(row=5, column=0, columnspan=2, padx=5, pady=5, sticky='w')
+# -----------------------
+Label(text='Символов в тексте: ', bg='#008B8B', font=('Arial', 12, 'bold'), fg='white').grid(row=5, column=1, sticky='w')
 
 # -------------------------------------------------- ROW'S AND COLUMN'S CONFIG
 
