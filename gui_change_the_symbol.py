@@ -23,32 +23,42 @@ def change():
 
 root = Tk()
 root.title('Change the symbol')
-root.geometry('350x350+200+200')
+root.geometry('550x350+200+200')
 root.config(bg='#008B8B')
 
 # -------------------------------------------------- WIDJETS
 
-entry_symbol = Entry(root)
-entry_symbol.grid(row=0, column=0, padx=5, pady=5, stick='wens')
+Label(text='Программа для удаления ненужных символов из текста', bg='#008B8B', font=('Arial', 12, 'bold'), fg='white') \
+    .grid(row=0, column=0, columnspan=3, sticky='w')
+# -----------------------
+Label(text='Символ для удаления', bg='#008B8B', font=('Arial', 10, 'bold')).grid(row=1, column=0, sticky='w')
 
-entry_change = Entry(root)
-entry_change.grid(row=1, column=0, padx=5, pady=5, stick='wens')
+entry_symbol = Entry(root, width=5, bd=3, justify=RIGHT, font=('Arial', 12, 'bold'))
+entry_symbol.grid(row=1, column=1, padx=5, pady=5, stick='w')
+# -----------------------
+Label(text='Символ, который нужно проставить', bg='#008B8B', font=('Arial', 10, 'bold')) \
+    .grid(row=2, column=0, sticky='w')
 
-entry_text = Text(root, wrap=WORD, width=20, height=5)
-entry_text.grid(row=3, column=0, padx=5, pady=5)
+entry_change = Entry(root, width=5, bd=3, justify=RIGHT, font=('Arial', 12, 'bold'))
+entry_change.grid(row=2, column=1, padx=5, pady=5, stick='w')
+# -----------------------
+Label(text='Ваш текст:', bg='#008B8B', font=('Arial', 12, 'bold'), fg='white').grid(row=3, column=0, sticky='w')
 
-result = Text(root, wrap=WORD, width=20, height=5)
-result.grid(row=5, column=0, padx=5, pady=5)
+entry_text = Text(root, wrap=WORD, width=25, height=5, bd=3, font=('Arial', 12, 'bold'))
+entry_text.grid(row=4, column=0, columnspan=2, padx=5, pady=5, stick='w')
+# -----------------------
+Label(text='Результат:', bg='#008B8B', font=('Arial', 12, 'bold'), fg='white').grid(row=3, column=1, sticky='w')
 
-start = Button(text='Внести изменения', command=change)
-start.grid(row=4, column=0, padx=5, pady=5)
-
-Label(text='Вставьте текст', bg='#008B8B').grid(row=2, column=0, sticky='w')
+result = Text(root, wrap=WORD, width=25, height=5, bd=3, font=('Arial', 12, 'bold'))
+result.grid(row=4, column=1, columnspan=2, padx=5, pady=5, stick='w')
+# -----------------------
+start = Button(text='Внести изменения', font=('Arial', 12), command=change)
+start.grid(row=5, column=0, columnspan=2, padx=5, pady=5, sticky='w')
 
 # -------------------------------------------------- ROW'S AND COLUMN'S CONFIG
 
-root.grid_columnconfigure(0, minsize=10)
-root.grid_columnconfigure(1, minsize=10)
+root.grid_columnconfigure(0, minsize=2)
+root.grid_columnconfigure(1, minsize=2)
 
 root.grid_rowconfigure(0, minsize=20)
 root.grid_rowconfigure(1, minsize=20)
