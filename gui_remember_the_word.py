@@ -24,22 +24,21 @@ def random_word ():
     # TODO: СДЕЛАТЬ ТАК, ЧТОБЫ ПОЛЕ ВВОДА 1 ОЧИЩАЛОСЬ
 
 def compare_entries ():
-    score = 0
+    score_level = 0
     value_1 = entry_2.get ()
     value_2 = entry_1.get ()
     if value_1 == value_2:
+        score = 0
         Label (text = 'Good boy!', bg = 'pink').grid (row = 6, column = 0)
-        value_3 = entry_4.get ()
-        if value_3 [:1] == '0':
-            value_3 = value_3 [1:]
-        entry_4.delete(0, END)
         score += 1
-        entry_4.insert(0, value_3 + str(score))
+        Label (text = score, bg = 'pink', bd = 3).grid (row=2, column=2, sticky='w')
         print ('entry_2: ' + value_1)
-    else:
-        Label(text='   Omg..   ', bg='pink').grid (row = 6, column = 0)
-        # score -= 1
-        print ('entry_2: ' + value_1)
+        print (score)
+        if value_1 != value_2:
+            Label(text='   Omg..   ', bg='pink').grid (row = 6, column = 0)
+            score -= 1
+            print ('entry_2: ' + value_1)
+            print(score)
 
     #TODO: СДЕЛАТЬ ТАК, ЧТОБЫ ОЧКИ МЕНЯЛИСЬ, А ПОТОМ И УРОВЕНЬ
 
@@ -79,11 +78,6 @@ Button (text = 'Clear', command = clear_entries).grid (row = 3, column = 1)
 entry_3 = Entry (root, justify = RIGHT, bd = 3)
 entry_3.insert (0, 0)
 entry_3.grid (row = 1, column = 2, padx = 5, pady = 5)
-
-entry_4 = Entry (root, justify = RIGHT, bd = 3)
-entry_4.insert (0, 0)
-entry_4.grid (row = 2, column = 2, padx = 5, pady = 5)
-
 
 # -------------------------------- Other configures
 
