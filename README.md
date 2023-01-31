@@ -24,3 +24,5 @@ pip install colorama
 
 pip install ipython (расширение, которое позволяет сделать удобной работу в конcоли ,подсветка, ошибки и т.д.)
 
+pip install simple_draw (библиотека для рисования)
+
