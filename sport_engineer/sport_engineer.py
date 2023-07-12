@@ -1,41 +1,17 @@
 # ХОЧУ НАПИСАТЬ ПРОГРАММУ, КОТОРАЯ БУДЕТ ВЫВОДИТЬ СПИСОК УПРАЖНЕНИЙ ДЛЯ ОПРЕДЕЛЕННОЙ ГРУППЫ МЫШЦ В ОПРЕДЕЛЕННЫЙ ДЕНЬ
 
-from colorama import Fore, Back, Style
+from variables import * # мы подключили файл variables.py, куда перенесли все переменные
 
 while True:
-    choice_workout = (Fore.BLUE + "\nВыберите схему тренировок: " + Style.RESET_ALL)
-    choice_day = (Fore.GREEN + "\nВыбрать день недели: " + Style.RESET_ALL)
-
-    sh_1 = "\nСхема тренировок №1"
-    sh_2 = "\nСхема тренировок №2"
-
-    var_1 = "\n1. Вариант 1"
-    var_2 = "\n2. Вариант 2"
-
-    mo = (Fore.YELLOW + "\n1. Понедельник" + Style.RESET_ALL)
-    we = (Fore.YELLOW + "\n2. Среда" + Style.RESET_ALL)
-    fr = (Fore.YELLOW + "\n3. Пятница" + Style.RESET_ALL)
-    ex = (Fore.YELLOW + "\n4. Выход" + Style.RESET_ALL)
-
-    legs_shoulders = (Fore.RED + "\nНоги + Плечи" + Style.RESET_ALL)
-    chest_biceps = (Fore.RED + "\nГрудь + Бицепс" + Style.RESET_ALL)
-    back_triceps = (Fore.RED + "\nСпина + Трицепс" + Style.RESET_ALL)
-
-    game_over = (Fore.BLUE + "\nДо свидания. Хорошей тренировки!" + Style.RESET_ALL)
-
-    back = (Fore.RED + "\nДля продолжения нажмите: " + Style.RESET_ALL) + "Enter" + \
-           (Fore.RED + ", для выхода: " + Style.RESET_ALL) + "9"
-
     print(mo, we, fr, ex)
-
-    choice_1_level = input(choice_day)
+    choice_1_level = input(choice_day) # 1 уровень - выберите день недели
 
     if choice_1_level == "1":
         print(legs_shoulders)
         print(var_1, var_2)
-        choice_2_level = input(choice_workout)
+        choice_2_level = input(choice_workout) # 2 уровень - выберите схему тренировок
         if choice_2_level == "1":
-            print(sh_1)
+            print(sh_1) # сама схема тренировок
         else:
             print(sh_2)
 
