@@ -1,8 +1,10 @@
 # ХОЧУ НАПИСАТЬ ПРОГРАММУ, КОТОРАЯ БУДЕТ ВЫВОДИТЬ СПИСОК УПРАЖНЕНИЙ ДЛЯ ОПРЕДЕЛЕННОЙ ГРУППЫ МЫШЦ В ОПРЕДЕЛЕННЫЙ ДЕНЬ
 
+from colorama import Fore, Back, Style
+
 while True:
-    choice_workout = "\nВыберите схему тренировок: "
-    choice_day = "\nВыбрать день недели: "
+    choice_workout = (Fore.BLUE + "\nВыберите схему тренировок: " + Style.RESET_ALL)
+    choice_day = (Fore.GREEN + "\nВыбрать день недели: " + Style.RESET_ALL)
 
     sh_1 = "\nСхема тренировок №1"
     sh_2 = "\nСхема тренировок №2"
@@ -10,18 +12,19 @@ while True:
     var_1 = "\n1. Вариант 1"
     var_2 = "\n2. Вариант 2"
 
-    mo = "\n1. Понедельник"
-    we = "\n2. Среда"
-    fr = "\n3. Пятница"
-    ex = "\n4. Выход"
+    mo = (Fore.YELLOW + "\n1. Понедельник" + Style.RESET_ALL)
+    we = (Fore.YELLOW + "\n2. Среда" + Style.RESET_ALL)
+    fr = (Fore.YELLOW + "\n3. Пятница" + Style.RESET_ALL)
+    ex = (Fore.YELLOW + "\n4. Выход" + Style.RESET_ALL)
 
-    legs_shoulders = "\nНоги + Плечи"
-    chest_biceps = "\nГрудь + Бицепс"
-    back_triceps = "\nСпина + Трицепс"
+    legs_shoulders = (Fore.RED + "\nНоги + Плечи" + Style.RESET_ALL)
+    chest_biceps = (Fore.RED + "\nГрудь + Бицепс" + Style.RESET_ALL)
+    back_triceps = (Fore.RED + "\nСпина + Трицепс" + Style.RESET_ALL)
 
-    game_over = "\nДо свидания. Хорошей тренировки!"
+    game_over = (Fore.BLUE + "\nДо свидания. Хорошей тренировки!" + Style.RESET_ALL)
 
-    back = "\nДля продолжения нажмите: Enter, для выхода: 9 "
+    back = (Fore.RED + "\nДля продолжения нажмите: " + Style.RESET_ALL) + "Enter" + \
+           (Fore.RED + ", для выхода: " + Style.RESET_ALL) + "9"
 
     print(mo, we, fr, ex)
 
@@ -63,5 +66,12 @@ while True:
     if come_back == "9":
         print(game_over)
         break
+
+# сделать подсветку текста цветом
+# прописать ошибки и исключения
+# добавить схему тренировок
+# прописать разминочные и заминочные упражнения
+# подключить файл для записи системы тренировок
+# понять, как подключать файлы питона друг к другу
 
 # возможность выбрать по отдельности часть тела для выдачи в результате упражнений
