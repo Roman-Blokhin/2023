@@ -39,7 +39,7 @@ while True:
         break
 
     if choice_1_level > 4:
-        print("\nТаких вариантов нет..")
+        print(err)
 
     come_back = input(back)
 

@@ -22,3 +22,5 @@ game_over = (Fore.BLUE + "\nДо свидания. Хорошей трениро
 
 back = (Fore.RED + "\nДля продолжения нажмите: " + Style.RESET_ALL) + "Enter" + \
     (Fore.RED + ", для выхода: " + Style.RESET_ALL) + "9"
+
+err = "\nТаких вариантов нет.."
