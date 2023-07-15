@@ -1,8 +1,14 @@
 # ХОЧУ НАПИСАТЬ ПРОГРАММУ, КОТОРАЯ БУДЕТ ВЫВОДИТЬ ТРЕНИРОВКИ ДЛЯ ОПРЕДЕЛЕННОЙ ГРУППЫ МЫШЦ В ОПРЕДЕЛЕННЫЙ ДЕНЬ С ВИЗУАЛОМ
 
-# ---------------------- 1. Создаем основное окно -----------------------
 import tkinter as tk
 from tkinter import *
+
+def monday():
+    tk.Label (root, text="Ноги + Плечи", font=("Arial", 20, "bold"), fg="red", bg="grey").\
+        grid(row=3, column=0, columnspan=3)
+    win.insert (tk.END, ', здравствуйте')
+
+# ---------------------- 1. Создаем основное окно -----------------------
 
 root = Tk ()
 root.title ('Система тренировок')
@@ -13,19 +19,19 @@ root.config (bg = 'grey')
 
 tk.Label(root, text=" ", bg="grey").grid(row=0, column=0)
 
-lbl_1 = tk.Label(root, text="Выберите день тренировки:", bg="grey", font=("Arial", 16, "bold"), fg="white").\
+tk.Label(root, text="Выберите день тренировки:", bg="grey", font=("Arial", 16, "bold"), fg="white").\
     grid(row=1, column=0, columnspan=3, stick="we")
 
-day_btn_mo = tk.Button(root, text="Понедельник", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+tk.Button(root, text="Понедельник", bg="grey", font=("Arial", 12, "bold"), fg="white", command=monday).\
     grid(row=2, column=0, stick="we", padx=7, pady=7)
-day_btn_we = tk.Button(root, text="Среда", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+tk.Button(root, text="Среда", bg="grey", font=("Arial", 12, "bold"), fg="white").\
     grid(row=2, column=1, stick="we", padx=7, pady=7)
-day_btn_fr = tk.Button(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+tk.Button(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg="white").\
     grid(row=2, column=2, stick="we", padx=7, pady=7)
 
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
-win = tk.Text(root, width=50, height=30, bg="white")
+win = tk.Text(root, width=50, height=30, bg="white", font=("Arial", 16, "normal"))
 win.grid(row=1, column=3, rowspan=16)
 
 # ---------------------- 5. Присваиваем размер нашим строкам и столбцам -----------------------
