@@ -13,17 +13,19 @@ root.config (bg = 'grey')
 
 tk.Label(root, text=" ", bg="grey").grid(row=0, column=0)
 
-lbl_1 = tk.Label(root, text="Выберите день тренировки: ").grid(row=1, column=0)
+lbl_1 = tk.Label(root, text="    Выберите день тренировки:      ", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+    grid(row=1, column=0, stick="we")
 
-day_btn_mo = tk.Button(root, text="Понедельник").grid(row=2, column=0)
-day_btn_we = tk.Button(root, text="Среда").grid(row=3, column=0)
-day_btn_fr = tk.Button(root, text="Пятница").grid(row=4, column=0)
+day_btn_mo = tk.Button(root, text="Понедельник", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+    grid(row=2, column=0, stick="w")
+day_btn_we = tk.Button(root, text="Среда", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+    grid(row=3, column=0, stick="w")
+day_btn_fr = tk.Button(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg="white").\
+    grid(row=4, column=0, stick="w")
 
+# ---------------------- 4. Создаем окно для вывода информации -----------------------
 
-
-
-
-
+win = tk.Text(root, width=50, height=30, bg="white").grid(row=1, column=1, rowspan=16)
 
 
 
