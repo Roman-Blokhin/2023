@@ -17,11 +17,11 @@ lbl_1 = tk.Label(root, text="Выберите день тренировки:", b
     grid(row=1, column=0, columnspan=3, stick="we")
 
 day_btn_mo = tk.Button(root, text="Понедельник", bg="grey", font=("Arial", 12, "bold"), fg="white").\
-    grid(row=2, column=0, stick="w")
+    grid(row=2, column=0, stick="we", padx=7, pady=7)
 day_btn_we = tk.Button(root, text="Среда", bg="grey", font=("Arial", 12, "bold"), fg="white").\
-    grid(row=2, column=1, stick="w")
+    grid(row=2, column=1, stick="we", padx=7, pady=7)
 day_btn_fr = tk.Button(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg="white").\
-    grid(row=2, column=2, stick="w")
+    grid(row=2, column=2, stick="we", padx=7, pady=7)
 
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
@@ -37,7 +37,7 @@ root.grid_columnconfigure(3, minsize=150)
 
 root.grid_rowconfigure(0, minsize=20)
 root.grid_rowconfigure(1, minsize=10)
-root.grid_rowconfigure(2, minsize=20)
+root.grid_rowconfigure(2, minsize=10)
 root.grid_rowconfigure(3, minsize=20)
 
 # ---------------------- 2. Закрываем программу -----------------------
