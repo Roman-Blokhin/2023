@@ -2,17 +2,18 @@
 
 import tkinter as tk
 from tkinter import *
+from variables import *
 
 def monday():
-    tk.Label (root, text="Ноги + Плечи", font=("Arial", 20, "bold"), fg="red", bg="grey").\
+    tk.Label (root, text="Ноги + Плечи", font=("Arial", 16, "bold"), fg="red", bg="grey").\
         grid(row=3, column=0, columnspan=3)
-    win.insert (tk.END, ', здравствуйте')
+    win.insert (tk.END, legs_1)
 
 # ---------------------- 1. Создаем основное окно -----------------------
 
 root = Tk ()
 root.title ('Система тренировок')
-root.geometry ('900x700+50+50')
+root.geometry ('950x700+50+50')
 root.config (bg = 'grey')
 
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
@@ -31,7 +32,7 @@ tk.Button(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg
 
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
-win = tk.Text(root, width=50, height=30, bg="white", font=("Arial", 16, "normal"))
+win = tk.Text(root, width=40, height=27, bg="white", font=("Arial", 16, "normal"))
 win.grid(row=1, column=3, rowspan=16)
 
 # ---------------------- 5. Присваиваем размер нашим строкам и столбцам -----------------------
