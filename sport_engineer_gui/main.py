@@ -4,29 +4,29 @@ import tkinter as tk
 from tkinter import *
 from variables import *
 
-def monday():
-    print("Monday")
-    tk.Label (root, text="Выбери этапы тренировки:", font=("Arial", 16, "bold"), fg="red", bg="Seashell").\
-        grid(row=3, column=0, columnspan=3)
-
-    tk.Checkbutton ()
-
-    tk.Label (root, text="Ноги + Плечи", font=("Arial", 16, "bold"), fg="red", bg="Gainsboro").\
-        grid(row=4, column=0, columnspan=3)
-    win.insert (tk.END, legs_1)
-
-def finish_sport ():
-    # tk.Label(root, text=" ", bg="grey").grid(row=0, column=0)
-
-    tk.Label(root, text="Выберите день тренировки:", bg="grey", font=("Arial", 18, "bold"), fg="white").\
-        grid(row=1, column=0, columnspan=3, sticky="we", rowspan=2, padx=40, pady=40)
-
-    tk.Checkbutton(root, text="Понедельник", bg="grey", font=("Arial", 12, "bold"), fg="white", indicatoron=0,
-                   command=monday).grid(row=2, column=0, stick="we", padx=7, pady=7)
-    tk.Checkbutton(root, text="Среда", bg="grey", font=("Arial", 12, "bold"), fg="white", indicatoron=0).\
-        grid(row=2, column=1, stick="we", padx=7, pady=7)
-    tk.Checkbutton(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg="white", indicatoron=0).\
-        grid(row=2, column=2, stick="we", padx=7, pady=7)
+# def monday():
+#     print("Monday")
+#     tk.Label (root, text="Выбери этапы тренировки:", font=("Arial", 16, "bold"), fg="red", bg="Seashell").\
+#         grid(row=3, column=0, columnspan=3)
+#
+#     tk.Checkbutton ()
+#
+#     tk.Label (root, text="Ноги + Плечи", font=("Arial", 16, "bold"), fg="red", bg="Gainsboro").\
+#         grid(row=4, column=0, columnspan=3)
+#     win.insert (tk.END, legs_1)
+#
+# def finish_sport ():
+#     # tk.Label(root, text=" ", bg="grey").grid(row=0, column=0)
+#
+#     tk.Label(root, text="Выберите день тренировки:", bg="grey", font=("Arial", 18, "bold"), fg="white").\
+#         grid(row=1, column=0, columnspan=3, sticky="we", rowspan=2, padx=40, pady=40)
+#
+#     tk.Checkbutton(root, text="Понедельник", bg="grey", font=("Arial", 12, "bold"), fg="white", indicatoron=0,
+#                    command=monday).grid(row=2, column=0, stick="we", padx=7, pady=7)
+#     tk.Checkbutton(root, text="Среда", bg="grey", font=("Arial", 12, "bold"), fg="white", indicatoron=0).\
+#         grid(row=2, column=1, stick="we", padx=7, pady=7)
+#     tk.Checkbutton(root, text="Пятница", bg="grey", font=("Arial", 12, "bold"), fg="white", indicatoron=0).\
+#         grid(row=2, column=2, stick="we", padx=7, pady=7)
 
 # ---------------------- 1. Создаем основное окно -----------------------
 
