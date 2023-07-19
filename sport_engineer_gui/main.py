@@ -4,6 +4,17 @@ import tkinter as tk
 from tkinter import *
 from variables import *
 
+def programs (): # функция для выбора готовой тренировки
+    tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1).\
+        grid(row=2, column=0, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
+        grid(row=3, column=0, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
+        grid(row=4, column=0, sticky="we", padx=7, pady=7)
+
+def program_1 (): # выводим тренировку: грудь + бицепс в окно
+    win.insert (tk.END, chest_biceps)
+
 # ---------------------- 1. Создаем основное окно -----------------------
 
 root = Tk ()
@@ -13,7 +24,7 @@ root.config (bg = 'DarkGrey')
 
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
 
-tk.Button (root, text="Готовая тренировка", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black",).\
+tk.Button (root, text="Готовая тренировка", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black", command=programs).\
     grid(row=1, column=0, sticky="we", padx=7, pady=7)
 
 tk.Button (root, text="Выбрать схему упражнений", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black").\
