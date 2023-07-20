@@ -7,19 +7,28 @@ from variables import *
 def programs (): # функция для выбора готовой тренировки
     tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1).\
         grid(row=2, column=0, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
+    tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_2).\
         grid(row=3, column=0, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
+    tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3).\
         grid(row=4, column=0, sticky="we", padx=7, pady=7)
 
 def program_1 (): # выводим тренировку: грудь + бицепс в окно
+    win.delete ('1.0', tk.END)
     win.insert (tk.END, chest_biceps)
+
+def program_2 (): # выводим тренировку: спина + трицепс в окно
+    win.delete ('1.0', tk.END)
+    win.insert (tk.END, back_triceps)
+
+def program_3 (): # выводим тренировку: ноги + плечи в окно
+    win.delete ('1.0', tk.END)
+    win.insert (tk.END, legs_shoulders)
 
 # ---------------------- 1. Создаем основное окно -----------------------
 
 root = Tk ()
 root.title ('Система тренировок')
-root.geometry ('750x700+50+50')
+root.geometry ('700x900+50+50')
 root.config (bg = 'DarkGrey')
 
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
@@ -43,11 +52,17 @@ tk.Label (root, text=" ").grid(row=10, column=0)
 tk.Label (root, text=" ").grid(row=11, column=0)
 tk.Label (root, text=" ").grid(row=12, column=0)
 tk.Label (root, text=" ").grid(row=13, column=0)
+tk.Label (root, text=" ").grid(row=14, column=0)
+tk.Label (root, text=" ").grid(row=15, column=0)
+tk.Label (root, text=" ").grid(row=16, column=0)
+tk.Label (root, text=" ").grid(row=17, column=0)
+tk.Label (root, text=" ").grid(row=18, column=0)
+tk.Label (root, text=" ").grid(row=19, column=0)
 
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
-win = tk.Text(root, width=30, height=20, bg="white", font=("Arial", 14, "normal"))
-win.grid(row=1, column=3, rowspan=13)
+win = tk.Text(root, width=30, height=30, bg="white", font=("Arial", 14, "normal"))
+win.grid(row=1, column=3, rowspan=19)
 
 # ---------------------- 5. Присваиваем размер нашим строкам и столбцам -----------------------
 
@@ -62,6 +77,19 @@ root.grid_rowconfigure(2, minsize=20)
 root.grid_rowconfigure(3, minsize=20)
 root.grid_rowconfigure(4, minsize=20)
 root.grid_rowconfigure(5, minsize=20)
+root.grid_rowconfigure(6, minsize=20)
+root.grid_rowconfigure(7, minsize=20)
+root.grid_rowconfigure(8, minsize=20)
+root.grid_rowconfigure(9, minsize=20)
+root.grid_rowconfigure(10, minsize=20)
+root.grid_rowconfigure(11, minsize=20)
+root.grid_rowconfigure(12, minsize=20)
+root.grid_rowconfigure(13, minsize=20)
+root.grid_rowconfigure(14, minsize=20)
+root.grid_rowconfigure(15, minsize=20)
+root.grid_rowconfigure(16, minsize=20)
+root.grid_rowconfigure(17, minsize=20)
+root.grid_rowconfigure(18, minsize=20)
 
 # ---------------------- 2. Закрываем программу -----------------------
 
