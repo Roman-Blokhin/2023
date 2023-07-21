@@ -5,20 +5,45 @@ from tkinter import *
 from variables import *
 
 def programs (): # функция для выбора готовой тренировки
-    tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1).\
+    # Грудь + Бицепс
+    tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", state="disabled").\
         grid(row=2, column=0, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1_1).\
+        grid(row=2, column=1, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1_2).\
+        grid(row=2, column=2, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1_3).\
+        grid(row=2, column=3, sticky="we", padx=7, pady=7)
+
+    # Спина + Трицепс
     tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_2).\
         grid(row=3, column=0, sticky="we", padx=7, pady=7)
+
+    # Ноги + Плечи
     tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3).\
         grid(row=4, column=0, sticky="we", padx=7, pady=7)
 
-def program_1 (): # выводим тренировку: грудь + бицепс в окно
+# ------------------------------ Тренировки на Грудь + Бицепс - 3 варианта -----------------------------
+
+def program_1_1 (): # выводим тренировку: грудь + бицепс в окно - 1 неделя
     win.delete ('1.0', tk.END)
-    win.insert (tk.END, chest_biceps)
+    win.insert (tk.END, chest_biceps_1)
+
+def program_1_2 (): # выводим тренировку: грудь + бицепс в окно - 2 неделя
+    win.delete ('1.0', tk.END)
+    win.insert (tk.END, chest_biceps_2)
+
+def program_1_3 (): # выводим тренировку: грудь + бицепс в окно - 3 неделя
+    win.delete ('1.0', tk.END)
+    win.insert (tk.END, chest_biceps_3)
+
+# ------------------------------ Тренировки на Спина + Трицепс - 3 варианта -----------------------------
 
 def program_2 (): # выводим тренировку: спина + трицепс в окно
     win.delete ('1.0', tk.END)
     win.insert (tk.END, back_triceps)
+
+# ------------------------------ Тренировки на Ноги + Плечи - 3 варианта -----------------------------
 
 def program_3 (): # выводим тренировку: ноги + плечи в окно
     win.delete ('1.0', tk.END)
@@ -28,7 +53,7 @@ def program_3 (): # выводим тренировку: ноги + плечи �
 
 root = Tk ()
 root.title ('Система тренировок')
-root.geometry ('700x900+50+50')
+root.geometry ('900x706+50+50')
 root.config (bg = 'DarkGrey')
 
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
@@ -62,7 +87,7 @@ tk.Label (root, text=" ").grid(row=19, column=0)
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
 win = tk.Text(root, width=30, height=30, bg="white", font=("Arial", 14, "normal"))
-win.grid(row=1, column=3, rowspan=19)
+win.grid(row=1, column=4, rowspan=19)
 
 # ---------------------- 5. Присваиваем размер нашим строкам и столбцам -----------------------
 
