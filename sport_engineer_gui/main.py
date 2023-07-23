@@ -26,22 +26,28 @@ def programs (): # функция для выбора готовой трени�
         grid(row=3, column=3, sticky="we", padx=7, pady=7)
 
     # Ноги + Плечи
-    tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3).\
+    tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
         grid(row=4, column=0, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3_1).\
+        grid(row=4, column=1, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3_2).\
+        grid(row=4, column=2, sticky="we", padx=7, pady=7)
+    tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3_3).\
+        grid(row=4, column=3, sticky="we", padx=7, pady=7)
 
 # ------------------------------ Тренировки на Грудь + Бицепс - 3 варианта -----------------------------
 
 def program_1_1 (): # выводим тренировку: грудь + бицепс в окно - 1 неделя
     win.delete ('1.0', tk.END)
-    win.insert (tk.END, back_triceps_1)
+    win.insert (tk.END, chest_biceps_1)
 
 def program_1_2 (): # выводим тренировку: грудь + бицепс в окно - 2 неделя
     win.delete ('1.0', tk.END)
-    win.insert (tk.END, back_triceps_2)
+    win.insert (tk.END, chest_biceps_2)
 
 def program_1_3 (): # выводим тренировку: грудь + бицепс в окно - 3 неделя
     win.delete ('1.0', tk.END)
-    win.insert (tk.END, back_triceps_3)
+    win.insert (tk.END, chest_biceps_3)
 
 # ------------------------------ Тренировки на Спина + Трицепс - 3 варианта -----------------------------
 
@@ -59,9 +65,17 @@ def program_2_3 (): # выводим тренировку: спина + триц
 
 # ------------------------------ Тренировки на Ноги + Плечи - 3 варианта -----------------------------
 
-def program_3 (): # выводим тренировку: ноги + плечи в окно
+def program_3_1 (): # выводим тренировку: ноги + плечи в окно - 1 неделя
     win.delete ('1.0', tk.END)
-    win.insert (tk.END, legs_shoulders)
+    win.insert (tk.END, legs_shoulders_1)
+
+def program_3_2 (): # выводим тренировку: ноги + плечи в окно - 2 неделя
+    win.delete ('1.0', tk.END)
+    win.insert (tk.END, legs_shoulders_2)
+
+def program_3_3 (): # выводим тренировку: ноги + плечи в окно - 3 неделя
+    win.delete ('1.0', tk.END)
+    win.insert (tk.END, legs_shoulders_3)
 
 # ---------------------- 1. Создаем основное окно -----------------------
 
