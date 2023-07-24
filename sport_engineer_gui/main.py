@@ -5,35 +5,73 @@ from tkinter import *
 from variables import *
 
 def programs (): # функция для выбора готовой тренировки
-    # Грудь + Бицепс
-    tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", state="disabled").\
-        grid(row=2, column=0, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1_1).\
-        grid(row=2, column=1, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1_2).\
-        grid(row=2, column=2, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_1_3).\
-        grid(row=2, column=3, sticky="we", padx=7, pady=7)
+    # ---------------------------------------- Грудь + Бицепс
+    # я поместил функцию создания кнопок в функцию нажатия на кнопку - грудь+бицепс, блокируя ее
+    def start_b_b ():
+        # кнопка 1 тренировки на: грудь + бицепс
+        btn_1_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                         state="normal", command=program_1_1)
+        btn_1_1.grid(row=2, column=1, sticky="we", padx=7, pady=7)
 
-    # Спина + Трицепс
-    tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
-        grid(row=3, column=0, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_2_1).\
-        grid(row=3, column=1, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_2_2).\
-        grid(row=3, column=2, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_2_3).\
-        grid(row=3, column=3, sticky="we", padx=7, pady=7)
+        # кнопка 2 тренировки на: грудь + бицепс
+        btn_1_2 = tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                         state="normal", command=program_1_2)
+        btn_1_2.grid(row=2, column=2, sticky="we", padx=7, pady=7)
 
-    # Ноги + Плечи
-    tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red").\
-        grid(row=4, column=0, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3_1).\
-        grid(row=4, column=1, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3_2).\
-        grid(row=4, column=2, sticky="we", padx=7, pady=7)
-    tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red", command=program_3_3).\
-        grid(row=4, column=3, sticky="we", padx=7, pady=7)
+        # кнопка 3 тренировки на: грудь + бицепс
+        btn_1_3 = tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                         state="normal", command=program_1_3)
+        btn_1_3.grid(row=2, column=3, sticky="we", padx=7, pady=7)
+
+        # кнопка блокировки кнопки - грудь+бицепс
+        btn_1.config(state='disabled')
+
+    # кнопка "Грудь + Бицепс", которая создает другие кнопки с вариантами тренировок
+    btn_1 = tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+               state="normal", command=start_b_b)
+    btn_1.grid(row=2, column=0, sticky="we", padx=7, pady=7)
+
+    # ------------------------------------- Спина + Трицепс
+    def start_b_t ():
+        btn_2_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                             state="normal", command=program_2_1)
+        btn_2_1.grid(row=3, column=1, sticky="we", padx=7, pady=7)
+
+        btn_2_2 = tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                             state="normal", command=program_2_2)
+        btn_2_2.grid(row=3, column=2, sticky="we", padx=7, pady=7)
+
+        btn_2_3 = tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                             state="normal", command=program_2_3)
+        btn_2_3.grid(row=3, column=3, sticky="we", padx=7, pady=7)
+
+        # кнопка блокировки кнопки - спина+трицепс
+        btn_2.config(state='disabled')
+
+    btn_2 = tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                       command=start_b_t)
+    btn_2.grid(row=3, column=0, sticky="we", padx=7, pady=7)
+
+    # ------------------------------------------------- Ноги + Плечи
+    def start_l_b ():
+        btn_3_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                             state="normal", command=program_3_1)
+        btn_3_1.grid(row=4, column=1, sticky="we", padx=7, pady=7)
+
+        btn_3_2 = tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                             state="normal", command=program_3_2)
+        btn_3_2.grid(row=4, column=2, sticky="we", padx=7, pady=7)
+
+        btn_3_3 = tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                             state="normal", command=program_3_3)
+        btn_3_3.grid(row=4, column=3, sticky="we", padx=7, pady=7)
+
+        # кнопка блокировки кнопки - ноги + плечи
+        btn_3.config(state='disabled')
+
+    btn_3 = tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
+                       command=start_l_b)
+    btn_3.grid(row=4, column=0, sticky="we", padx=7, pady=7)
 
 # ------------------------------ Тренировки на Грудь + Бицепс - 3 варианта -----------------------------
 
@@ -86,8 +124,8 @@ root.config (bg = 'DarkGrey')
 
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
 
-tk.Button (root, text="Готовая тренировка", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black", command=programs).\
-    grid(row=1, column=0, sticky="we", padx=7, pady=7)
+tk.Button (root, text="Готовая тренировка", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black",
+           command=programs).grid(row=1, column=0, sticky="we", padx=7, pady=7)
 
 tk.Button (root, text="Выбрать схему упражнений", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black").\
     grid(row=2, column=0, sticky="we", padx=7, pady=7)
