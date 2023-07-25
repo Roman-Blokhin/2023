@@ -4,6 +4,8 @@ import tkinter as tk
 from tkinter import *
 from variables import *
 
+# ---------------------- 6. Создаем функции -----------------------
+
 def programs (): # функция для выбора готовой тренировки
     # ---------------------------------------- Грудь + Бицепс
     # я поместил функцию создания кнопок в функцию нажатия на кнопку - грудь+бицепс, блокируя ее
@@ -23,8 +25,10 @@ def programs (): # функция для выбора готовой трени�
                          state="normal", command=program_1_3)
         btn_1_3.grid(row=2, column=3, sticky="we", padx=7, pady=7)
 
-        # кнопка блокировки кнопки - грудь+бицепс
+        # кнопка блокировки кнопки - грудь+бицепс и разблокировка остальных
         btn_1.config(state='disabled')
+        btn_2.config(state='normal')
+        btn_3.config(state='normal')
 
     # кнопка "Грудь + Бицепс", которая создает другие кнопки с вариантами тренировок
     btn_1 = tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
@@ -45,8 +49,10 @@ def programs (): # функция для выбора готовой трени�
                              state="normal", command=program_2_3)
         btn_2_3.grid(row=3, column=3, sticky="we", padx=7, pady=7)
 
-        # кнопка блокировки кнопки - спина+трицепс
+        # кнопка блокировки кнопки - спина+трицепс и разблокировка остальных
         btn_2.config(state='disabled')
+        btn_1.config(state='normal')
+        btn_3.config(state='normal')
 
     btn_2 = tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                        command=start_b_t)
@@ -66,8 +72,10 @@ def programs (): # функция для выбора готовой трени�
                              state="normal", command=program_3_3)
         btn_3_3.grid(row=4, column=3, sticky="we", padx=7, pady=7)
 
-        # кнопка блокировки кнопки - ноги + плечи
+        # кнопка блокировки кнопки - ноги + плечи и разблокировка остальных
         btn_3.config(state='disabled')
+        btn_2.config(state='normal')
+        btn_1.config(state='normal')
 
     btn_3 = tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                        command=start_l_b)
@@ -119,7 +127,7 @@ def program_3_3 (): # выводим тренировку: ноги + плечи
 
 root = Tk ()
 root.title ('Система тренировок')
-root.geometry ('900x706+50+50')
+root.geometry ('750x706+50+50')
 root.config (bg = 'DarkGrey')
 
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
@@ -133,22 +141,22 @@ tk.Button (root, text="Выбрать схему упражнений", bg="Ligh
 tk.Button (root, text="Обратная связь", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black").\
     grid(row=3, column=0, sticky="we", padx=7, pady=7)
 
-tk.Label (root, text=" ").grid(row=4, column=0)
-tk.Label (root, text=" ").grid(row=5, column=0)
-tk.Label (root, text=" ").grid(row=6, column=0)
-tk.Label (root, text=" ").grid(row=7, column=0)
-tk.Label (root, text=" ").grid(row=8, column=0)
-tk.Label (root, text=" ").grid(row=9, column=0)
-tk.Label (root, text=" ").grid(row=10, column=0)
-tk.Label (root, text=" ").grid(row=11, column=0)
-tk.Label (root, text=" ").grid(row=12, column=0)
-tk.Label (root, text=" ").grid(row=13, column=0)
-tk.Label (root, text=" ").grid(row=14, column=0)
-tk.Label (root, text=" ").grid(row=15, column=0)
-tk.Label (root, text=" ").grid(row=16, column=0)
-tk.Label (root, text=" ").grid(row=17, column=0)
-tk.Label (root, text=" ").grid(row=18, column=0)
-tk.Label (root, text=" ").grid(row=19, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=4, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=5, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=6, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=7, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=8, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=9, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=10, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=11, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=12, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=13, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=14, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=15, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=16, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=17, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=18, column=0)
+tk.Label (root, text=" ", bg = "DarkGrey").grid(row=19, column=0)
 
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
@@ -189,4 +197,6 @@ root.mainloop ()
 # --------------- TO-DO -----------------
 
 # написать визуал программы с выводом информации на экран
+# сделать так, чтобы при выборе системы тренировок, к примеру, ноги + плечи, варианты тренировок пропадали (1,2,
+# 3) у остальных тренировок, а также разблокировались кнопки систем тренировок
 # возможность выбрать по отдельности часть тела для выдачи в результате упражнений
