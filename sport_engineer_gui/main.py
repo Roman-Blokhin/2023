@@ -30,6 +30,25 @@ def programs (): # функция для выбора готовой трени�
         btn_2.config(state='normal')
         btn_3.config(state='normal')
 
+        # создаем лейблы, которые скроют нам ненужные кнопки у неактивных систем тренировок
+        l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_1.grid(row=3, column=1, sticky="we", padx=7, pady=7)
+
+        l_2 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_2.grid(row=3, column=2, sticky="we", padx=7, pady=7)
+
+        l_3 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_3.grid(row=3, column=3, sticky="we", padx=7, pady=7)
+
+        l_4 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_4.grid(row=4, column=1, sticky="we", padx=7, pady=7)
+
+        l_5 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_5.grid(row=4, column=2, sticky="we", padx=7, pady=7)
+
+        l_6 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_6.grid(row=4, column=3, sticky="we", padx=7, pady=7)
+
     # кнопка "Грудь + Бицепс", которая создает другие кнопки с вариантами тренировок
     btn_1 = tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                state="normal", command=start_b_b)
@@ -54,6 +73,25 @@ def programs (): # функция для выбора готовой трени�
         btn_1.config(state='normal')
         btn_3.config(state='normal')
 
+        # создаем лейблы, которые скроют нам ненужные кнопки у неактивных систем тренировок
+        l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_1.grid(row=2, column=1, sticky="we", padx=7, pady=7)
+
+        l_2 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_2.grid(row=2, column=2, sticky="we", padx=7, pady=7)
+
+        l_3 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_3.grid(row=2, column=3, sticky="we", padx=7, pady=7)
+
+        l_4 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_4.grid(row=4, column=1, sticky="we", padx=7, pady=7)
+
+        l_5 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_5.grid(row=4, column=2, sticky="we", padx=7, pady=7)
+
+        l_6 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_6.grid(row=4, column=3, sticky="we", padx=7, pady=7)
+
     btn_2 = tk.Button (root, text="Спина + Трицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                        command=start_b_t)
     btn_2.grid(row=3, column=0, sticky="we", padx=7, pady=7)
@@ -76,6 +114,25 @@ def programs (): # функция для выбора готовой трени�
         btn_3.config(state='disabled')
         btn_2.config(state='normal')
         btn_1.config(state='normal')
+
+        # создаем лейблы, которые скроют нам ненужные кнопки у неактивных систем тренировок
+        l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_1.grid(row=3, column=1, sticky="we", padx=7, pady=7)
+
+        l_2 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_2.grid(row=3, column=2, sticky="we", padx=7, pady=7)
+
+        l_3 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_3.grid(row=3, column=3, sticky="we", padx=7, pady=7)
+
+        l_4 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_4.grid(row=2, column=1, sticky="we", padx=7, pady=7)
+
+        l_5 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_5.grid(row=2, column=2, sticky="we", padx=7, pady=7)
+
+        l_6 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_6.grid(row=2, column=3, sticky="we", padx=7, pady=7)
 
     btn_3 = tk.Button (root, text="Ноги + Плечи", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                        command=start_l_b)
