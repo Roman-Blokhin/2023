@@ -14,25 +14,25 @@ def programs (): # функция для выбора готовой трени�
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_1)
 
-            btn_1_1.config(state='disabled') # блокируем остальные цифры при нажат
-            btn_1_2.config(state='normal')
-            btn_1_3.config(state='normal')
+            btn_1_1.config(state='disabled', bg="white") # блокируем остальные цифры при нажатии, меняя цвет кнопки
+            btn_1_2.config(state='normal', bg="LightGrey")
+            btn_1_3.config(state='normal', bg="LightGrey")
 
         def program_1_2 (): # выводим тренировку: грудь + бицепс в окно - 2 неделя
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_2)
 
-            btn_1_2.config(state='disabled') # блокируем остальные цифры при нажатии
-            btn_1_1.config(state='normal')
-            btn_1_3.config(state='normal')
+            btn_1_2.config(state='disabled', bg="white") # блокируем остальные цифры при нажатии
+            btn_1_1.config(state='normal', bg="LightGrey")
+            btn_1_3.config(state='normal', bg="LightGrey")
 
         def program_1_3 (): # выводим тренировку: грудь + бицепс в окно - 3 неделя
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_3)
 
-            btn_1_3.config(state='disabled') # блокируем остальные цифры при нажат
-            btn_1_1.config(state='normal')
-            btn_1_2.config(state='normal')
+            btn_1_3.config(state='disabled', bg="white") # блокируем остальные цифры при нажат
+            btn_1_1.config(state='normal', bg="LightGrey")
+            btn_1_2.config(state='normal', bg="LightGrey")
 
         # кнопка 1 тренировки на: грудь + бицепс
         btn_1_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
@@ -50,9 +50,9 @@ def programs (): # функция для выбора готовой трени�
         btn_1_3.grid(row=2, column=3, sticky="we", padx=7, pady=7)
 
         # кнопка блокировки кнопки - грудь+бицепс и разблокировка остальных
-        btn_1.config(state='disabled')
-        btn_2.config(state='normal')
-        btn_3.config(state='normal')
+        btn_1.config(state='disabled', bg="white")
+        btn_2.config(state='normal', bg="LightGrey")
+        btn_3.config(state='normal', bg="LightGrey")
 
         # создаем лейблы, которые скроют нам ненужные кнопки у неактивных систем тренировок
         l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
@@ -84,25 +84,25 @@ def programs (): # функция для выбора готовой трени�
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_1)
 
-            btn_2_1.config(state='disabled') # блокируем нажатую кнопку
-            btn_2_2.config(state='normal')
-            btn_2_3.config(state='normal')
+            btn_2_1.config(state='disabled', bg="white") # блокируем нажатую кнопку
+            btn_2_2.config(state='normal', bg="LightGrey")
+            btn_2_3.config(state='normal', bg="LightGrey")
 
         def program_2_2 (): # выводим тренировку: спина + трицепс в окно - 2 неделя
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_2)
 
-            btn_2_2.config(state='disabled') # блокируем нажатую кнопку
-            btn_2_1.config(state='normal')
-            btn_2_3.config(state='normal')
+            btn_2_2.config(state='disabled', bg="white") # блокируем нажатую кнопку
+            btn_2_1.config(state='normal', bg="LightGrey")
+            btn_2_3.config(state='normal', bg="LightGrey")
 
         def program_2_3 (): # выводим тренировку: спина + трицепс в окно - 3 неделя
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_3)
 
-            btn_2_3.config(state='disabled') # блокируем нажатую кнопку
-            btn_2_1.config(state='normal')
-            btn_2_2.config(state='normal')
+            btn_2_3.config(state='disabled', bg="white") # блокируем нажатую кнопку
+            btn_2_1.config(state='normal', bg="LightGrey")
+            btn_2_2.config(state='normal', bg="LightGrey")
 
         btn_2_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                              state="normal", command=program_2_1)
@@ -117,9 +117,9 @@ def programs (): # функция для выбора готовой трени�
         btn_2_3.grid(row=3, column=3, sticky="we", padx=7, pady=7)
 
         # кнопка блокировки кнопки - спина+трицепс и разблокировка остальных
-        btn_2.config(state='disabled')
-        btn_1.config(state='normal')
-        btn_3.config(state='normal')
+        btn_2.config(state='disabled', bg="white")
+        btn_1.config(state='normal', bg="LightGrey")
+        btn_3.config(state='normal', bg="LightGrey")
 
         # создаем лейблы, которые скроют нам ненужные кнопки у неактивных систем тренировок
         l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
@@ -150,25 +150,25 @@ def programs (): # функция для выбора готовой трени�
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_1)
 
-            btn_3_1.config(state='disabled') # блокируем нажатую кнопку
-            btn_3_2.config(state='normal')
-            btn_3_3.config(state='normal')
+            btn_3_1.config(state='disabled', bg="white") # блокируем нажатую кнопку
+            btn_3_2.config(state='normal', bg="LightGrey")
+            btn_3_3.config(state='normal', bg="LightGrey")
 
         def program_3_2 (): # выводим тренировку: ноги + плечи в окно - 2 неделя
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_2)
 
-            btn_3_2.config(state='disabled') # блокируем нажатую кнопку
-            btn_3_1.config(state='normal')
-            btn_3_3.config(state='normal')
+            btn_3_2.config(state='disabled', bg="white") # блокируем нажатую кнопку
+            btn_3_1.config(state='normal', bg="LightGrey")
+            btn_3_3.config(state='normal', bg="LightGrey")
 
         def program_3_3 (): # выводим тренировку: ноги + плечи в окно - 3 неделя
             win.delete ('1.0', tk.END)
             win.insert (tk.END, chest_biceps_3)
 
-            btn_3_3.config(state='disabled') # блокируем нажатую кнопку
-            btn_3_1.config(state='normal')
-            btn_3_2.config(state='normal')
+            btn_3_3.config(state='disabled', bg="white") # блокируем нажатую кнопку
+            btn_3_1.config(state='normal', bg="LightGrey")
+            btn_3_2.config(state='normal', bg="LightGrey")
 
         btn_3_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
                              state="normal", command=program_3_1)
@@ -183,9 +183,9 @@ def programs (): # функция для выбора готовой трени�
         btn_3_3.grid(row=4, column=3, sticky="we", padx=7, pady=7)
 
         # кнопка блокировки кнопки - ноги + плечи и разблокировка остальных
-        btn_3.config(state='disabled')
-        btn_2.config(state='normal')
-        btn_1.config(state='normal')
+        btn_3.config(state='disabled', bg="white")
+        btn_2.config(state='normal', bg="LightGrey")
+        btn_1.config(state='normal', bg="LightGrey")
 
         # создаем лейблы, которые скроют нам ненужные кнопки у неактивных систем тренировок
         l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
