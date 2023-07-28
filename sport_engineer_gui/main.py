@@ -7,6 +7,55 @@ from variables import *
 # ---------------------- 6. Создаем функции -----------------------
 
 def programs (): # функция для выбора готовой тренировки
+    # ------------------------------------- Кнопка НАЗАД в меню -----------------------------------
+    def back_1 ():
+        btn_start_1 = tk.Button (root, text="Готовая тренировка", bg="LightGrey",
+                                 font=("Comic Sans MS", 12, "normal"), fg="black", command=programs)
+        btn_start_1.grid(row=1, column=0, sticky="we", padx=7, pady=7)
+
+        btn_start_2 = tk.Button (root, text="Выбрать схему упражнений", bg="LightGrey",
+                                 font=("Comic Sans MS", 12, "normal"), fg="black")
+        btn_start_2.grid(row=2, column=0, sticky="we", padx=7, pady=7)
+
+        btn_start_3 = tk.Button (root, text="Обратная связь", bg="LightGrey", font=("Comic Sans MS", 12, "normal"),
+                                 fg="black")
+        btn_start_3.grid(row=3, column=0, sticky="we", padx=7, pady=7)
+
+        btn_start_4 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        btn_start_4.grid(row=4, column=0, sticky="we", padx=7, pady=7)
+
+        l_1 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_1.grid(row=3, column=1, sticky="we", padx=7, pady=7)
+
+        l_2 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_2.grid(row=3, column=2, sticky="we", padx=7, pady=7)
+
+        l_3 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_3.grid(row=3, column=3, sticky="we", padx=7, pady=7)
+
+        l_4 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_4.grid(row=4, column=1, sticky="we", padx=7, pady=7)
+
+        l_5 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_5.grid(row=4, column=2, sticky="we", padx=7, pady=7)
+
+        l_6 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_6.grid(row=4, column=3, sticky="we", padx=7, pady=7)
+
+        l_7 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_7.grid(row=2, column=1, sticky="we", padx=7, pady=7)
+
+        l_8 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_8.grid(row=2, column=2, sticky="we", padx=7, pady=7)
+
+        l_9 = tk.Label (root, text=" ", bg="DarkGrey", font=("Comic Sans MS", 19, "normal"))
+        l_9.grid(row=2, column=3, sticky="we", padx=7, pady=7)
+
+    # меняем кнопку - готовые тренировки на кнопку меню - назад
+    btn_0 = tk.Button (root, text="Назад", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black",
+                       command=back_1)
+    btn_0.grid(row=1, column=0, sticky="we", padx=7, pady=7)
+
     # ---------------------------------------- Грудь + Бицепс
     # я поместил функцию создания кнопок в функцию нажатия на кнопку - грудь+бицепс, блокируя ее
     def start_b_b ():
@@ -36,17 +85,17 @@ def programs (): # функция для выбора готовой трени�
 
         # кнопка 1 тренировки на: грудь + бицепс
         btn_1_1 = tk.Button (root, text="1", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
-                         state="normal", command=program_1_1)
+                             state="normal", command=program_1_1)
         btn_1_1.grid(row=2, column=1, sticky="we", padx=7, pady=7)
 
         # кнопка 2 тренировки на: грудь + бицепс
         btn_1_2 = tk.Button (root, text="2", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
-                         state="normal", command=program_1_2)
+                             state="normal", command=program_1_2)
         btn_1_2.grid(row=2, column=2, sticky="we", padx=7, pady=7)
 
         # кнопка 3 тренировки на: грудь + бицепс
         btn_1_3 = tk.Button (root, text="3", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
-                         state="normal", command=program_1_3)
+                             state="normal", command=program_1_3)
         btn_1_3.grid(row=2, column=3, sticky="we", padx=7, pady=7)
 
         # кнопка блокировки кнопки - грудь+бицепс и разблокировка остальных
@@ -75,7 +124,7 @@ def programs (): # функция для выбора готовой трени�
 
     # кнопка "Грудь + Бицепс", которая создает другие кнопки с вариантами тренировок
     btn_1 = tk.Button (root, text="Грудь + Бицепс", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="red",
-               state="normal", command=start_b_b)
+                       state="normal", command=start_b_b)
     btn_1.grid(row=2, column=0, sticky="we", padx=7, pady=7)
 
     # ------------------------------------- Спина + Трицепс
