@@ -4,13 +4,18 @@ import tkinter as tk
 from tkinter import *
 from variables import *
 
-# ---------------------- 6. Создаем функции -----------------------
+# ---------------------- 7. Кнопка выхода из программы -----------------------
 
-def programs (): # функция для выбора готовой тренировки
+def exit ():
+    root.destroy ()
+
+# ---------------------- 6. Создаем функции для отображения кнопок с готовыми тренировками -----------------------
+
+def complete_program (): # функция для выбора готовой тренировки
     # ------------------------------------- Кнопка НАЗАД в меню -----------------------------------
     def back_1 ():
         btn_start_1 = tk.Button (root, text="Готовая тренировка", bg="LightGrey",
-                                 font=("Comic Sans MS", 12, "normal"), fg="black", command=programs)
+                                 font=("Comic Sans MS", 12, "normal"), fg="black", command=complete_program)
         btn_start_1.grid(row=1, column=0, sticky="we", padx=7, pady=7)
 
         btn_start_2 = tk.Button (root, text="Выбрать схему упражнений", bg="LightGrey",
@@ -269,7 +274,7 @@ root.config (bg = 'DarkGrey')
 # ---------------------- 3. Создаем кнопки и лейблы -----------------------
 
 tk.Button (root, text="Готовая тренировка", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black",
-           command=programs).grid(row=1, column=0, sticky="we", padx=7, pady=7)
+           command=complete_program).grid(row=1, column=0, sticky="we", padx=7, pady=7)
 
 tk.Button (root, text="Выбрать схему упражнений", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black").\
     grid(row=2, column=0, sticky="we", padx=7, pady=7)
@@ -292,7 +297,9 @@ tk.Label (root, text=" ", bg = "DarkGrey").grid(row=15, column=0)
 tk.Label (root, text=" ", bg = "DarkGrey").grid(row=16, column=0)
 tk.Label (root, text=" ", bg = "DarkGrey").grid(row=17, column=0)
 tk.Label (root, text=" ", bg = "DarkGrey").grid(row=18, column=0)
-tk.Label (root, text=" ", bg = "DarkGrey").grid(row=19, column=0)
+
+tk.Button (root, text="Выход", bg="LightGrey", font=("Comic Sans MS", 12, "normal"), fg="black", command=exit).\
+    grid(row=19, column=0, sticky="we", padx=7, pady=7) # кнопка - выход из программы
 
 # ---------------------- 4. Создаем окно для вывода информации -----------------------
 
@@ -334,7 +341,4 @@ root.mainloop ()
 
 # написать визуал программы с выводом информации на экран
 # попробовать все однотипные данные внести в переменные на другой файл
-# на втором уровне меню сделать кнопку назад из кнопки - готовая тренировка
-# сделать так, чтобы при выборе 1,2 или 3, остальные цифры были активны, а выбранная оставалась нажатой
-# поменять цвет у всех нажатых кнопок
 # возможность выбрать по отдельности часть тела для выдачи в результате упражнений
