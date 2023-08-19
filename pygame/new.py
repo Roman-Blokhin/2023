@@ -15,6 +15,15 @@ SKY = 0, 175, 255
 WHITE = 255, 255, 255
 BLACK = 0, 0, 0
 
+# определяем класс для создания персонажа
+class Player (pygame.sprite.Sprite):
+    def __init__(self): # запускает наш код при создании персонажа
+        pygame.sprite.Sprite.init(self) # запускаем инициализатор встроенных классов Sprite
+        self.image = pygame.Surface((50, 50)) # задаем размер нашего персонажа - квадрат
+        self.image = pygame.fill(BLACK) # задаем цвет квадрата
+        self.rect = self.image.get_rect() # создаем прямоугольник, окружающий наш квадрат для
+        self.rect.center = (WIDTH/2, HEIGHT/2) # размещаем прямоугольник по центру экрана
+
 
 pygame.init()
 pygame.mixer.init()
