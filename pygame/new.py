@@ -21,17 +21,16 @@ height_q = 20 # высота объекта
 x = WIDTH/2 # координаты расположение на оси х
 y = HEIGHT/2 # координаты расположение на оси y
 
-velocity = 10 # скорость
+velocity = 1 # скорость
 
 # определяем класс для создания персонажа
 class Player (pygame.sprite.Sprite):
     def __init__(self): # запускает наш код при создании персонажа
         pygame.sprite.Sprite.__init__(self) # запускаем инициализатор встроенных классов Sprite
-        self.image = pygame.Surface((50, 50)) # задаем размер нашего персонажа - квадрат
+        self.image = pygame.Surface((350, 350)) # задаем размер нашего персонажа - квадрат
         self.image.fill(BLACK) # задаем цвет квадрата
         self.rect = self.image.get_rect() # создаем прямоугольник, окружающий наш квадрат для
         #self.rect.center = (WIDTH/2, HEIGHT/2) # размещаем прямоугольник по центру экрана
-
         #pygame.display.update() # ОБЪЕКТ ВЫВОДИТСЯ НА ЭКРАН
 
 
@@ -51,6 +50,8 @@ all_sprites.add(player) # добавили спрайт персонажа в г
 
 running = True
 while running:
+    pygame.time.delay(10) # время передвижения в миллисекундах
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -58,11 +59,11 @@ while running:
     keys = pygame.key.get_pressed()
     if keys[pygame.K_LEFT] and x > 0:
         x -= velocity
-    elif keys[pygame.K_RIGHT] and x < 400-width_q:
+    elif keys[pygame.K_RIGHT] and x < 300:
         x += velocity
     if keys[pygame.K_UP] and y > 0:
         y -= velocity
-    elif keys[pygame.K_DOWN] and x < 500-height_q:
+    elif keys[pygame.K_DOWN] and x < 400:
         y += velocity
 
     pygame.draw.rect(screen, WHITE, (x, y, width_q, height_q)) # НАРИСОВАЛИ ОБЪЕКТ И РАЗМЕСТИЛИ ЕГО
