@@ -15,9 +15,13 @@ SKY = 0, 175, 255
 WHITE = 255, 255, 255
 BLACK = 0, 0, 0
 
-width_q = 20
-height_q = 20
+width_q = 20 # ширина объекта
+height_q = 20 # высота объекта
 
+x = WIDTH/2 # координаты расположение на оси х
+y = HEIGHT/2 # координаты расположение на оси y
+
+velocity = 10 # скорость
 
 # определяем класс для создания персонажа
 class Player (pygame.sprite.Sprite):
@@ -27,8 +31,8 @@ class Player (pygame.sprite.Sprite):
         self.image.fill(BLACK) # задаем цвет квадрата
         self.rect = self.image.get_rect() # создаем прямоугольник, окружающий наш квадрат для
         #self.rect.center = (WIDTH/2, HEIGHT/2) # размещаем прямоугольник по центру экрана
-        pygame.draw.rect(screen, WHITE, (WIDTH/2, HEIGHT/2, width_q, height_q)) # НАРИСОВАЛИ ОБЪЕКТ И РАЗМЕСТИЛИ ЕГО
-        pygame.display.update() # ОБЪЕКТ ВЫВОДИТСЯ НА ЭКРАН
+
+        #pygame.display.update() # ОБЪЕКТ ВЫВОДИТСЯ НА ЭКРАН
 
 
 pygame.init()
@@ -43,7 +47,6 @@ clock = pygame.time.Clock()
 all_sprites = pygame.sprite.Group() # создали группу для спрайтов (элементов, которые двигаются на экране)
 player = Player() # создали спрайт персонажа
 all_sprites.add(player) # добавили спрайт персонажа в группу спрайтов
-print(all_sprites)
 
 
 running = True
@@ -52,7 +55,18 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    all_sprites.update() # добавили группу спрайтов в цикл
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and x > 0:
+        x -= velocity
+    elif keys[pygame.K_RIGHT] and x < 400-width_q:
+        x += velocity
+    if keys[pygame.K_UP] and y > 0:
+        y -= velocity
+    elif keys[pygame.K_DOWN] and x < 500-height_q:
+        y += velocity
 
+    pygame.draw.rect(screen, WHITE, (x, y, width_q, height_q)) # НАРИСОВАЛИ ОБЪЕКТ И РАЗМЕСТИЛИ ЕГО
+    pygame.display.update()
+    #all_sprites.update() # добавили группу спрайтов в цикл
 
 pygame.quit()
