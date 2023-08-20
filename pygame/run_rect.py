@@ -57,15 +57,15 @@ while run:
         eye_l_x += velocity/4
         eye_r_x += velocity/4.5
 
-    elif keys[pg.K_UP] and hero_y > 0:
+    elif keys[pg.K_UP] and hero_y > 300:
         hero_y -= velocity
-        eye_l_y -= velocity/4.5
-        eye_r_y -= velocity/4
+        eye_l_y += velocity/7.5
+        eye_r_y += velocity/7
 
     elif keys[pg.K_DOWN] and hero_y + hero_height < HEIGHT_SCREEN:
         hero_y += velocity
-        eye_l_y += velocity/4
-        eye_r_y += velocity/4
+        eye_l_y -= velocity/7
+        eye_r_y -= velocity/7
 
     screen.fill(GREEN) # пишем в цикле, чтобы объект не растягивался
 
