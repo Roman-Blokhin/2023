@@ -25,6 +25,8 @@ apple_y = random.randint (5, 395)
 apple_width = 15
 apple_height = 15
 
+score = 0
+
 pygame.init()
 win = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('WarCraft')
@@ -41,6 +43,11 @@ while run:
         if keys[pygame.K_LEFT]:
             x1_change = -10
             y1_change = 0
+
+        if hero_x >= screen_width or hero_x <= 0 or hero_y >= screen_height or hero_y <= 0:
+            print('GAME OVER')
+            run = False
+
         if keys[pygame.K_RIGHT]:
             x1_change = +10
             y1_change = 0
