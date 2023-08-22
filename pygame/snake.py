@@ -44,9 +44,6 @@ while run:
             x1_change = -10
             y1_change = 0
 
-        if hero_x >= screen_width or hero_x <= 0 or hero_y >= screen_height or hero_y <= 0:
-            print('GAME OVER')
-            run = False
 
         if keys[pygame.K_RIGHT]:
             x1_change = +10
@@ -58,6 +55,11 @@ while run:
             y1_change = +10
             x1_change = 0
 
+    if hero_x + hero_width >= screen_width-10 or hero_x <= 10 or \
+            hero_y + hero_height >= screen_height-10 or hero_y <= 10:
+        print('GAME OVER')
+        run = False
+
     hero_x += x1_change
     hero_y += y1_change
 
@@ -65,6 +67,7 @@ while run:
     pygame.draw.rect(win, green, (apple_x, apple_y, apple_width, apple_height))
 
     clock.tick(FPS)
+
     pygame.display.update()
 
 pygame.quit()
