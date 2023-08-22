@@ -1,10 +1,14 @@
 import pygame
 import random
+import time
+pygame.init()
 
 red = 100, 0, 0
 green = 0, 250, 0
 yellow = 250, 250, 0
 blue = 0, 0, 100
+black = 0, 0, 0
+white = 255, 255, 255
 
 screen_width = 300
 screen_height = 400
@@ -20,14 +24,17 @@ hero_height = 20
 x1_change = 0
 y1_change = 0
 
-apple_x = random.randint (5, 295)
-apple_y = random.randint (5, 395)
+apple_x = random.randint (5, 290)
+apple_y = random.randint (5, 390)
 apple_width = 15
 apple_height = 15
 
-score = 0
+second_win = pygame.font.SysFont(None, 50) # создали сообщение, которое высветится поверх экрана
 
-pygame.init()
+def message (msg, color): # создаем функцию для появления сообщения по окончанию игры
+    mesg = second_win.render(msg, True, color) # создаем слой
+    win.blit(mesg, [50, 200]) # отрисовываем сообщение на основной поверхности
+
 win = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption('WarCraft')
 clock = pygame.time.Clock()
@@ -43,8 +50,6 @@ while run:
         if keys[pygame.K_LEFT]:
             x1_change = -10
             y1_change = 0
-
-
         if keys[pygame.K_RIGHT]:
             x1_change = +10
             y1_change = 0
@@ -67,7 +72,11 @@ while run:
     pygame.draw.rect(win, green, (apple_x, apple_y, apple_width, apple_height))
 
     clock.tick(FPS)
-
     pygame.display.update()
+
+win.fill(white) # установил слой заливки поверх экрана цикла
+message('GAME OVER', red)
+pygame.display.update()
+time.sleep(2)
 
 pygame.quit()
