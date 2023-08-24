@@ -15,6 +15,7 @@ screen_height = 400
 FPS = 7
 
 snake_block = 10
+snake_speed = 10
 
 second_win = pygame.font.SysFont(None, 30) # создали слой для сообщения, которое высветится поверх экрана
 
@@ -38,10 +39,8 @@ def gameloop (): # функция, которая не закрывает игр
     hero_width = 20
     hero_height = 20
 
-    apple_x = random.randint (5, 290) # отрисовываем яблоко
-    apple_y = random.randint (5, 390)
-    apple_width = 15
-    apple_height = 15
+    foodx = round(random.randint(0, screen_width - snake_block) / 10.0) * 10.0 # координаты еды х
+    foody = round(random.randint(0, screen_height - snake_block) / 10.0) * 10.0 # координаты еды у
 
     while not game_over:
         while game_close:
@@ -85,7 +84,11 @@ def gameloop (): # функция, которая не закрывает игр
         hero_y += y1_change
 
         pygame.draw.rect(win, yellow, (hero_x, hero_y, hero_width, hero_height))
-        pygame.draw.rect(win, green, (apple_x, apple_y, apple_width, apple_height))
+        pygame.draw.rect(win, green, (foodx, foody, hero_width, hero_height))
+
+        if hero_x == foodx and hero_y == foody:
+            print('Скушал')
+        clock.tick(snake_speed)
 
         clock.tick(FPS)
         pygame.display.update()
