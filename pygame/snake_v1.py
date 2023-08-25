@@ -44,7 +44,7 @@ def gameloop (): # функция, которая не закрывает игр
 
     while not game_over:
         while game_close:
-            win.fill(grey) # установил слой заливки поверх экрана цикла
+            win.fill(black) # установил слой заливки поверх экрана цикла
             message('SPASE - новая игра', white) # вызываем функцию с завершающим сообщением
             pygame.display.update()
 
