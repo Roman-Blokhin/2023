@@ -33,7 +33,7 @@ while True:
             # зная координаты нажатия мышки, мы сможем понять, к какой колонке оно относится
             column = x_mouse // (width+margin) # определяем колонку при нажатии
             row = y_mouse // (height+margin) # определяем ряд при нажатии
-            mas [row] [column] = 1 # нажатой колонке и ряду присваиваем значение 1
+            mas [row] [column] = mas [row] [column] ^ 1 # нажатой колонке и ряду присваиваем значение 1
 
     for row in range(count_blocks):
         for column in range(count_blocks):
