@@ -9,8 +9,8 @@ count_blocks = 10
 margin = 10
 
 FRAME_COLOR = (0, 0, 0)
-RED = (150, 0, 0)
-GREEN = (0, 150, 0)
+red = (150, 0, 0)
+green = (0, 150, 0)
 white = (255, 255, 255)
 
 win = pygame.display.set_mode(size)
@@ -21,11 +21,13 @@ while True:
         if event.type == pygame.QUIT:
             print('Выход')
             quit()
-    win.fill(FRAME_COLOR)
+    win.fill(red)
 
-    for column in range(count_blocks):
-        x = column*width + (column+1)*margin # меняем координату Х - колонку умножаем на ширину блока и суммируем с
-        # отступом умноженным на (колонку + 1) - так мы чередуем номер наших колонок
-        pygame.draw.rect(win, white, (x, 10, width, height))
+    for row in range(count_blocks):
+        for column in range(count_blocks):
+            x = column*width + (column+1)*margin # меняем координату Х - колонку умножаем на ширину блока и суммируем с
+            # отступом умноженным на (колонку + 1) - так мы чередуем номер наших колонок
+            y = row*width + (row+1)*margin
+            pygame.draw.rect(win, white, (x, y, width, height))
 
     pygame.display.update()
