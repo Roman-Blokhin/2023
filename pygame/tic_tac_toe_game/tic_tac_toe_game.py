@@ -32,10 +32,11 @@ while True:
             print('x = ' + str(x_mouse) + ' y = ' + str(y_mouse))
             col = x_mouse // (block_size+margin)
             row = y_mouse // (block_size+margin)
-            if query % 2 == 0:
-                mas [row][col] = 'x'
-            else:
-                mas [row][col] = 'o'
+            if mas [row][col] == 0: # проверка, чтобы нельзя было менять цвет ячейки, если она занята др. игроком
+                if query % 2 == 0: # четные, один игрок и цвет, нечетные - другой
+                    mas [row][col] = 'x'
+                else:
+                    mas [row][col] = 'o'
             query += 1
 
     for row in range (3):
@@ -49,5 +50,12 @@ while True:
             x = col*block_size + (col+1)*margin
             y = row*block_size + (row+1)*margin
             pygame.draw.rect(win, color, (x, y, block_size, block_size))
+            if color == green:
+                # чертим линию из одного угла в другой, последний параметр - ширина линии
+                pygame.draw.line (win, white, (x+20, y+20), (x+block_size-20, y+block_size-20), 3)
+                pygame.draw.line (win, white, (x+block_size-20, y+20), (x+20, y+block_size-20), 3)
+            elif color == blue:
+                # ищем ширину и высоту квадрата и делим пополам, так находим центр для радиуса
+                pygame.draw.circle(win, white, (x+block_size/2, y+block_size/2), 35, 3)
 
     pygame.display.update()
