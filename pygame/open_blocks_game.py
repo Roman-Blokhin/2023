@@ -1,4 +1,5 @@
 import pygame
+from tkinter import *
 pygame.init()
 
 block_size = 100
@@ -20,6 +21,10 @@ query = 0
 
 screen = pygame.display.set_mode(size)
 
+root = Tk()
+root.title ('Подсчет ходов')
+root.geometry('300x300+500+500')
+
 run = True
 while run:
     screen.fill(red)
@@ -27,6 +32,7 @@ while run:
         if event.type == pygame.QUIT:
             print('Выход')
             quit()
+            root.mainloop()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x_mouse, y_mouse = pygame.mouse.get_pos()
             column = x_mouse // (block_size+margin)
@@ -62,3 +68,4 @@ while run:
                 pygame.draw.circle(screen, white, (x+block_size/2, y+block_size/2), 35, 3)
 
     pygame.display.update()
+
