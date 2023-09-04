@@ -1,5 +1,4 @@
 import pygame
-from tkinter import *
 pygame.init()
 
 block_size = 100
@@ -20,10 +19,7 @@ mas = [[0]*block_count for i in range(block_count)]
 query = 0
 
 screen = pygame.display.set_mode(size)
-
-root = Tk()
-root.title ('Подсчет ходов')
-root.geometry('300x300+500+500')
+pygame.display.set_caption('Крестики нолики')
 
 run = True
 while run:
@@ -32,7 +28,6 @@ while run:
         if event.type == pygame.QUIT:
             print('Выход')
             quit()
-            root.mainloop()
         elif event.type == pygame.MOUSEBUTTONDOWN:
             x_mouse, y_mouse = pygame.mouse.get_pos()
             column = x_mouse // (block_size+margin)
