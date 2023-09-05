@@ -8,11 +8,12 @@ width = block_size*block_count + margin*4
 height = block_size*block_count + margin*4
 size = (width, height)
 
-grey = (100, 100, 100)
+grey = (50, 50, 50)
 white = (255, 255, 255)
 red = (105, 0, 0)
 green = (0, 150, 0)
 blue = (0, 0, 150)
+PapayaWhip = (255, 239, 213)
 
 mas = [[0]*block_count for i in range(block_count)]
 
@@ -23,7 +24,7 @@ pygame.display.set_caption('Крестики нолики')
 
 run = True
 while run:
-    screen.fill(red)
+    screen.fill(PapayaWhip)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             print('Выход')
