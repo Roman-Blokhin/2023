@@ -1,14 +1,23 @@
 import pygame
 pygame.init()
 
-brown = (165, 42, 42)
+brown = (139, 69, 19)
+litebrown = (188, 143, 143)
 red = (255, 0, 0)
+white = (255, 228, 196)
+green = (0, 200, 0)
 
 block_size = 50
 block_count = 8
 margin = 1
-width = height = block_size*block_count + margin*9
+header_margin = block_size
+width = height = block_size*block_count + 2*block_size + margin*block_count
 size = (width, height)
+
+def blocks(color, row, column):
+    pygame.draw.rect(screen, color, [block_size+column*block_size + margin*(column + 1),
+                                     block_size+row*block_size + margin*(row + 1),
+                                     block_size, block_size])
 
 screen = pygame.display.set_mode(size)
 pygame.display.set_caption('Шахматы')
@@ -18,19 +27,19 @@ mas = [[0]*block_count for i in range(block_count)]
 run = True
 
 while run:
-    screen.fill(brown)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit()
 
-    for row in range(block_size):
-        for column in range(block_size):
-            #if mas [row][column] == '1':
-            #    color = red
-#
-            #else:
-            #    color = red
+    screen.fill(litebrown)
 
-            pygame.draw.rect(screen, red, (0, 0, block_size, block_size))
+    for row in range(block_count):
+        for column in range(block_count):
+            if (row+column) % 2 == 0:
+                color = white
+            else:
+                color = brown
+
+            blocks(color, row, column)
 
     pygame.display.update()
