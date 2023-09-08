@@ -5,7 +5,8 @@ brown = (139, 69, 19)
 litebrown = (188, 143, 143)
 red = (255, 0, 0)
 white = (255, 228, 196)
-green = (0, 200, 0)
+green = (32, 178, 170)
+grey = (112, 128, 144)
 
 block_size = 50
 block_count = 8
@@ -31,14 +32,14 @@ while run:
         if event.type == pygame.QUIT:
             quit()
 
-    screen.fill(litebrown)
+    screen.fill(grey)
 
     for row in range(block_count):
         for column in range(block_count):
             if (row+column) % 2 == 0:
                 color = white
             else:
-                color = brown
+                color = green
 
             blocks(color, row, column)
 
