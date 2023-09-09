@@ -31,6 +31,11 @@ while run:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             quit()
+        elif event.type == pygame.MOUSEBUTTONDOWN:
+            x_mouse, y_mouse = pygame.mouse.get_pos()
+            print(x_mouse, y_mouse)
+            column = x_mouse // (block_size+margin)
+            row = y_mouse // (block_size+margin)
 
     screen.fill(grey)
 
