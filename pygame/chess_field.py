@@ -41,11 +41,19 @@ while run:
 
     for row in range(block_count):
         for column in range(block_count):
+            x = column*block_size + (column+1)*margin + header_margin*2
+            y = row*block_size + (row+1)*margin
+
             if (row+column) % 2 == 0:
                 color = white
             else:
                 color = green
 
             blocks(color, row, column)
+
+            if color == green:
+                pygame.draw.line(screen, white, (x+10, y+10), (x+block_size-20, y+block_size-20), 3)
+
+
 
     pygame.display.update()
