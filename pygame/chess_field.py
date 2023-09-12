@@ -1,6 +1,8 @@
 import pygame
 pygame.init()
 
+
+
 brown = (139, 69, 19)
 litebrown = (188, 143, 143)
 red = (255, 0, 0)
@@ -48,12 +50,10 @@ while run:
                 color = white
             else:
                 color = green
+                pygame.draw.line(screen, white, (x+10, y+10), (x+block_size-20, y+block_size-20), 3)
+                pygame.draw.line(screen, white, (x+block_size-20, y+10), (x+10, y+block_size-20), 3)
 
             blocks(color, row, column)
 
-            if color == green:
-                pygame.draw.line(screen, white, (x+10, y+10), (x+block_size-20, y+block_size-20), 3)
-
-
-
     pygame.display.update()
+
