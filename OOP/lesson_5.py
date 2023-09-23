@@ -2,8 +2,8 @@
 
 
 class Cat:
-    def hello():
+    def hello (self):
         print ('Hello, Roman')
 
 a = Cat()
-print(Cat.hello())
+print(Cat.hello(a))
