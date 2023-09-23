@@ -44,4 +44,20 @@ for i in range(n):
         s += mas[i][j] # складываем все числа в массиве
 print (s)
 
+# заменяем числа, которые делятся на число 7 без остатка на значок амперсанда
+for i in range(n):
+    for j in range(n):
+        if mas[i][j] % 7 == 0:
+            mas[i][j] = "&"
+
+print ()
+
+for i in range(n): # выводим уже новую матрицу с обновленными значениями амперсанда
+    for j in range(n):
+        print(mas[i][j], end=' ')
+    print()
+
+
+
+
 
