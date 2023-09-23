@@ -43,13 +43,15 @@ s = 0
 for i in range(n):
     for j in range(m):
         s += mas[i][j] # складываем все числа в массиве
-print (s)
+print ('Сумма элементов: ', str(s))
 
 # заменяем числа, которые делятся на число 7 без остатка на значок амперсанда
+amp = 0
 for i in range(n):
     for j in range(m):
         if mas[i][j] % 7 == 0:
             mas[i][j] = "&"
+            amp += 1
 
 print ()
 
@@ -58,7 +60,9 @@ for i in range(n): # выводим уже новую матрицу с обно
         print(mas[i][j], end=' ')
     print()
 
-
+multi = m * n
+print('Элементов: ', str(multi)) # узнаем сколько элементов в массиве
+print('Измененных объектов: ', str(amp))
 
 
 
