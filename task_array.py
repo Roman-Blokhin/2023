@@ -37,4 +37,11 @@ for i in range(n): # выводим уже новую матрицу с обно
         print(mas[i][j], end=' ')
     print()
 
+# получаем сумму чисел в массиве
+s = 0
+for i in range(n):
+    for j in range(n):
+        s += mas[i][j] # складываем все числа в массиве
+print (s)
+
 
