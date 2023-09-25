@@ -23,4 +23,13 @@ print(kelly.color)
 print(kelly.age)
 print(kelly.breed)
 
+# создаем новый объект
+rom = Dog('red', 'Roman', age = 33) # мы можем изменять параметры, которые проставлены по умолчанию
+print(rom.name)
+print(rom.color)
+print(rom.age)
+print(rom.breed)
+rom.engine = 7
+print(rom.engine)
+
 
