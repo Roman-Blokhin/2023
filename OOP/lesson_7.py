@@ -1,5 +1,7 @@
 # Практика по созданию классов
 
+from math import sqrt  # импортируем функцию корня из библиотеки math
+
 class Point:
     def __init__(self, coord_x=0, coord_y=0):  # коорд передаем по умолчанию, чтобы не было ошибки при их отсутствии
         self.move_to(coord_x, coord_y)
@@ -13,3 +15,16 @@ class Point:
 
     def print_point(self): # делаем функцию красивого вывода данных о координатах точки
         print(f"Точки координат: ({self.x}, {self.y})")
+
+    # найдем расстояние между двумя точками, применив теорему пифагора
+    def distance(self, another_point):
+        if not isinstance(another_point, Point):  # проверяем принадлежность экземпляра к классу
+            raise ValueError('Аргумент не принадлежит классу Point') # вызываем исключение
+
+        return sqrt((self.x - another_point.x)**2 + (self.y - another_point.y)**2)
+
+a = Point(6, 0)
+b = Point(0, 8)
+
+print (a.distance(b))
+
