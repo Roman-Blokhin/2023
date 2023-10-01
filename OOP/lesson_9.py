@@ -20,3 +20,6 @@ class BankAccount:
 
 account_1 = BankAccount('Roman', 1000, 5670987)
 account_1.print_protected_data()
+print(account_1._name)   # данные protected, но это всего лишь для согласования с разработчиками
+print(account_1._balance)
+print(account_1._passport)
