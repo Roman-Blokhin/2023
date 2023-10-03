@@ -13,3 +13,14 @@ class BankAccount:
         self.__balance = value
 
 a = BankAccount("Roman", 100)
+
+print(a.__dict__)  # смотрим атрибуты экземпляра
+print(a._BankAccount__balance)  # копируем из атрибутов экземпляра зашифрованный атрибут и выводим, не напрямую
+
+b = BankAccount('Ilon', 400)
+print(b.__dict__)
+print(b._BankAccount__balance)
+
+b.get_balance()  # используем метод косвенного вывода защищенного атрибута
+b.set_balance(500)  # переопределяем значение защищенного атрибута с помощью метода
+print(b._BankAccount__balance)
