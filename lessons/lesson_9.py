@@ -28,3 +28,17 @@ def average():
         return summa / count
 
     return inner
+
+
+# ------------------------------------------ #
+
+from time import perf_counter  # импортируем функцию, которая запускает таймер в секундах
+
+
+def timer():
+    start = perf_counter()  # при первом вызове функции фиксирует время (включает таймер)
+
+    def inner():  # функция вызовет разницу времени между первым вызовом функции и последним
+        return round(perf_counter() - start)  # округляем до целых чисел
+
+    return inner
