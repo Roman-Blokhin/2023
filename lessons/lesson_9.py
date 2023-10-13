@@ -11,3 +11,20 @@ def average_numbers():
 
     return inner
 
+
+# ------------------------------------------ #
+
+def average():
+    summa = 0
+    count = 0
+
+    def inner(num):
+        nonlocal summa  # изменяем переменную в соседней зоне видимости
+        nonlocal count
+        summa = summa + num
+        count += 1
+        print(summa, count)
+
+        return summa / count
+
+    return inner
