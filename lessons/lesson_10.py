@@ -44,3 +44,33 @@ def say(name, surname, age):  # 3. передаем аргументы
 
 say = decorator(say)
 say('Rob', 'Waters', 16)  # 5. прописываем значение аргументов
+print()
+
+# ------------------------------------------ #
+
+# Если нам нужно передать аргументы в функцию, лучше всегда использовать *args, **kwargs
+
+def header(func):  # 2. создали первый декоратор
+    def inner(*args, **kwargs):
+        print('<h1>')
+        func(*args, **kwargs)
+        print('</h1>')
+
+    return inner
+
+def table(func):  # 2. создали второй декоратор
+    def inner(*args, **kwargs):
+        print('<table>')
+        func(*args, **kwargs)
+        print('</table>')
+
+    return inner
+
+@header  # 3. навесили декоратор, который будет сверху
+@table  # 4. такая надпись с @ заменяет: say = header(table(say))
+def say(name, surname, age):
+    print('Hello Hero!', name, surname, age)
+
+
+# say = decorator(say)  # 5. убираем лишнее
+say('Rob', 'Waters', 16)
