@@ -30,3 +30,34 @@ print(sqr.__name__)  # 7. видим имя sqr после декорации и
 help(sqr)  # 8. видим документацию sqr после декорации и добавления условий №6
 
 sqr(5)
+
+# ---------------------------------- #
+# Второй способ более короткий
+
+from functools import wraps  # импортируем декоратор wraps
+
+
+def h_1(func):
+
+    @wraps(func)  # навешиваем декоратор на нашу функц., он напрямую сохр. знач.: __name__ , __doc__ из входной функции
+    def inner(*args, **kwargs):
+        print('<table>')
+        func(*args, **kwargs)
+        print('</table>')
+
+    return inner
+
+
+def kwadro(x):
+    """
+    Это новая функция
+    :param x:
+    :return:
+    """
+    print(x ** 2)
+
+kwadro = h_1(kwadro)
+kwadro(4)
+
+print(kwadro.__name__)  # выводим имя
+help(kwadro)  # выводим документацию
