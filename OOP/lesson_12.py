@@ -15,6 +15,7 @@ print(a.area)
 a.side = 90  # 7. переопределили размер
 print(a.area)
 
+
 # -------------------------------------------------------- #
 
 class Square_2:
@@ -28,6 +29,7 @@ class Square_2:
             print('calculate area')  # 4. делаем отметку, когда у нас присваивается значение нашей переменной
             self.__area = self.side ** 2  # 3. присваиваем новое значение, оно кешируется и сохраняется
         return self.__area
+
 
 # -------------------------------------------------------- #
 
@@ -55,11 +57,13 @@ class Square_3:
             self.__area = self.side ** 2
         return self.__area
 
+
 d = Square_3(8)  # задаем значение
 print(d.area_3)  # производится вычисление, значение кешируется, выводится отметка, что было вычисление
 print(d.area_3)  # при новом вызове получаем только результат вычислений
 d.side = 99  # задаем новое значение для нашей стороны
 print(d.area_3)  # производится новое вычисление и вывод с отметкой
+
 
 # --------------------------------------- #
 # Будем искать периметр
@@ -94,3 +98,38 @@ class Perimetr:
             print('Записано в кеш')
             self.__inner = (self.__side_a + self.__side_b) * 2
         return self.__inner
+
+# ---------------------------- #
+# Ищем площадь прямоугольника s = a*b
+
+class Priam:
+    def __init__(self, a, b):
+        self.__side_1 = a
+        self.__side_2 = b
+        self.__result = None
+
+    @property
+    def side_1(self):
+        return self.__side_2
+
+    @property
+    def side_2(self):
+        return self.__side_2
+
+    @side_1.setter
+    def side_1(self, value):
+        self.__side_1 = value
+        self.__result = None
+
+    @side_2.setter
+    def side_2(self, value):
+        self.__side_2 = value
+        self.__result = None
+
+    @property
+    def result(self):
+        if self.__result is None:
+            print('Результат записан')
+            self.__result = self.__side_1 * self.__side_2
+
+        return self.__result
