@@ -6,7 +6,16 @@ from string import digits  # импортируем digits - все числа 0
 class User:
     def __init__(self, login, password):
         self.__login = login
-        self.__password = password
+        self.password = password  # мы заменяем __password на свойство password, чтобы все проверки подключились
+        self.__secret = 'В сундуке лежит 10 золотых'  # новая проверка
+
+    @property  # мы создали еще одну проверку для входа куда-либо, где нужно вводить пароль
+    def secret(self):
+        s = input('Введите пароль: ')
+        if s == self.password:
+            print(self.__secret)
+        else:
+            raise ValueError ('Доступ закрыт')
 
     @property
     def password(self):
