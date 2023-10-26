@@ -15,7 +15,7 @@ class User:
         if s == self.password:
             print(self.__secret)
         else:
-            raise ValueError ('Доступ закрыт')
+            raise ValueError('Доступ закрыт')
 
     @property
     def password(self):
