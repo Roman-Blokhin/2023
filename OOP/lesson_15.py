@@ -32,6 +32,11 @@ class DepartmentIt:
     def info_5():
         print(DepartmentIt.PYTHON_DEV, DepartmentIt.GO_DEV, DepartmentIt.REACT_DEV)
 
+    # как изменяются значения элементов класса, когда мы к ним обращаемся
+    def hiring_python_dev(self):
+        self.PYTHON_DEV += 1  # мы берем элемент из класса и меняем его, создавая новый ЛОКАЛЬНЫЙ элемент PYTHON_DEV
+        DepartmentIt.PYTHON_DEV += 1  # мы меняем значение элемента именно в классе DepartmentIt
+
 
 it_1 = DepartmentIt()
 it_1.info()
@@ -42,3 +47,10 @@ it_2.info_3  # вызываем как свойство
 
 it_2.info_4()  # вызываем через cls
 it_2.info_5()  # вызываем через название класса
+
+it_3 = DepartmentIt()
+it_3.hiring_python_dev()
+print(it_3.PYTHON_DEV)  # здесь мы обращаемся к новой созданной ЛОКАЛЬНОЙ переменной PYTHON_DEV
+print(it_3.__dict__)  # смотрим атрибуты метода hiring_python_dev - видим, какие в нем есть элементы
+print(DepartmentIt.PYTHON_DEV)  # обращаемся напрямую к экземпляру класса и меняем его, сохраняя результат
+print(DepartmentIt.__dict__)  # смотрим атрибуты всего класса DepartmentIt и видим изменения в переменной PYTHON_DEV
