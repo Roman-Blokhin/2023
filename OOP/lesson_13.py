@@ -2,6 +2,9 @@
 
 from string import digits  # импортируем digits - все числа 0-9, записанные строкой
 
+file = open("pass.txt", "r", encoding="utf-8")  # открываем текстовый файл с паролями, который лежит в этой же папке
+content = file.read()  # создаем переменную в которую вкладываем все содержимое файла
+
 
 class User:
     def __init__(self, login, password):
@@ -29,6 +32,14 @@ class User:
 
         return False  # если в цикле цифры нет, возвращаем False
 
+    @staticmethod  # создаем метод, который проверяет, есть ли строчка(наш пароль) в списке подключенного файла
+    def is_pass(value):
+        position = content.find(value)
+        if position != -1:
+            return False
+
+        return True
+
     @password.setter
     def password(self, value):
         if not isinstance(value, str):  # проверяет наш пароль, является ли он строкой
@@ -39,6 +50,8 @@ class User:
             raise ValueError('Длина пароль не может быть больше 10 символов')
         if not User.is_include_number(value):  # проверка, содержится ли в новом пароле хотя бы одна цифра
             raise ValueError('Пароль должен содержать хоть одну цифру')
+        if not self.is_pass(value): # проверка, содержит ли наш пароль текст из файла с паролями - можно self. или User.
+            raise ValueError('Легкий пароль')
         self.__password = value
 
     @property
@@ -48,3 +61,11 @@ class User:
     @login.setter
     def login(self, value):
         self.__login = value
+
+# ------------------------ #
+# ПОДКЛЮЧАЕМ ФАЙЛ С ПАРОЛЯМИ, ЧТОБЫ ПРОВЕРИТЬ, ЕСТЬ ЛИ ТАМ НАБРАННЫЙ ПОЛЬЗОВАТЕЛЕМ ПАРОЛЬ
+
+a = User('roman', 'QWERTYj2')  # создаем экземпляр со значениями
+a.password = 'QWERT2'  # присваиваем новое значение паролю
+print(a.password)
+
