@@ -13,23 +13,25 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent  # ПУТЬ К НАШЕМУ ПРОЕКТУ
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
+# СЕКРЕТНЫЙ КЛЮЧ, НИКОМУ НЕ ПОКАЗЫВАТЬ, ПОМЕНЯТЬ ПРИ ЗАЛИВКИ САЙТА НА СЕРВЕР
 SECRET_KEY = 'django-insecure-*6w054%7qep&&m3px=fu%ay-=94trjh(czlrx7ly0=p-ccv450'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = True  # ПОКАЗЫВАЕТ ВСЕ ОШИБКИ ПРЯМО НА СТРАНИЦАХ САЙТА, ПРИ РЕЛИЗЕ МЕНЯЕМ ЗНАЧЕНИЕ НА False
 
+# УКАЗЫВАЕМ ТЕ ХОСТЫ(ДОМЕННЫЕ ИМЕНА), НА КОТОРЫХ МОЖНО ОПУБЛИКОВАТЬ НАШ САЙТ
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
+# УЖЕ УСТАНОВЛЕННЫЕ ПРИЛОЖЕНИЯ НА НАШЕМ САЙТЕ
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -39,18 +41,21 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 ]
 
+# ТЕ ПЛАГИНЫ/ПРОМЕЖУТОЧНОЕ ПО/КЛАССЫ, КОТОРЫЕ УЖЕ УСТАНОВЛЕНЫ
 MIDDLEWARE = [
-    'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.security.SecurityMiddleware',  # БЕЗОПАСНОСТЬ
+    'django.contrib.sessions.middleware.SessionMiddleware',  # РАБОТА С СЕССИЯМИ
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',  # ПОДДЕРЖКА Csrf ТОКЕНА - ВСТАВЛЯЕТСЯ В ФОРМЫ
+    'django.contrib.auth.middleware.AuthenticationMiddleware',  # ОБЕСПЕЧИВАЕТ КОРРЕКТНУЮ АВТОРИЗАЦИЮ
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# КАКОЙ ОСНОВНОЙ ФАЙЛ URLS БУДЕТ ИСПОЛЬЗОВАТЬСЯ ДЛЯ ПРОЕКТА
 ROOT_URLCONF = 'blog.urls'
 
+# КАКИЕ ШАБЛОНЫ МЫ МОЖЕМ ИСПОЛЬЗОВАТЬ В ХОДЕ ПРОЕКТА
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -67,12 +72,14 @@ TEMPLATES = [
     },
 ]
 
+# С ПОМОЩЬЮ ЭТОГО СМОЖЕМ ВЫГРУЗИТЬ САЙТ НА СЕРВЕР
 WSGI_APPLICATION = 'blog.wsgi.application'
 
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# С КАКОЙ БАЗОЙ ДАННОЙ МЫ РАБОТАЕМ
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -103,9 +110,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'en-us'  # УСТАНАВЛИВАЕМ/МЕНЯЕМ ЯЗЫК
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'UTC'  # УСТАНАВЛИВАЕМ/МЕНЯЕМ ВРЕМЕННУЮ ЗОНУ
 
 USE_I18N = True
 
