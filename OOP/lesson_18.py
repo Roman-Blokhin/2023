@@ -14,9 +14,14 @@ class BankAccount:
             return self.balance + other
         raise NotImplemented  # 5. говорим, что для остальных типов операция не поддерживается
 
-
+    def __radd__(self, other):
+        print('__radd__ вызван')
+        return self + other  # 6. мы поменяли местами наши слагаемые, новое значение ставим слева, чтобы не было ошибки
 
 q = BankAccount('oi', 100)
 w = BankAccount('oi', 1)
 print(q+w)  # можно менять местами элементы при сложении, если это экземпляры класса, а не экземпляр + новое знач.
 print(w+q)
+
+r = BankAccount('aa', 1)  # с помощью __radd__ мы можем менять слагаемые местами без ошибки
+print(12 + r)
