@@ -28,6 +28,22 @@ class BankAccount:
             return other + self.name
         raise NotImplemented
 
+    def __sub__(self, other):  # 7. вычитание
+        print('__sub__ вызван')
+        if isinstance(other, BankAccount):
+            return self.balance - other.balance
+        if isinstance(other, (int, float)):
+            return self.balance - other
+        raise NotImplemented
+
+    def __truediv__(self, other):  # 7. деление/ можем делить экземпляр на экземпляр, меняя местами
+        print('__truediv__ вызван')
+        if isinstance(other, BankAccount):
+            return self.balance / other.balance
+        if isinstance(other, (int, float)):
+            return self.balance / other
+        raise NotImplemented
+
 
 # ------------------- #
 
