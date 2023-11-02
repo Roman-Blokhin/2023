@@ -18,10 +18,27 @@ class BankAccount:
         print('__radd__ вызван')
         return self + other  # 6. мы поменяли местами наши слагаемые, новое значение ставим слева, чтобы не было ошибки
 
+    def __mul__(self, other):  # 7. умножение
+        print('__mul__ был вызван')
+        if isinstance(other, BankAccount):
+            return self.balance * other.balance
+        if isinstance(other, (int, float)):
+            return self.balance * other
+        if isinstance(other, str):  # 8. проверка, проверяет тип значения, если строка, конкатенация в начало имени
+            return other + self.name
+        raise NotImplemented
+
+
+# ------------------- #
+
 q = BankAccount('oi', 100)
 w = BankAccount('oi', 1)
-print(q+w)  # можно менять местами элементы при сложении, если это экземпляры класса, а не экземпляр + новое знач.
-print(w+q)
+print(q + w)  # 4.1 можно менять местами элементы при сложении. экземпляры класса, а не экземпляр + новоезнач.
+print(w + q)
 
-r = BankAccount('aa', 1)  # с помощью __radd__ мы можем менять слагаемые местами без ошибки
+r = BankAccount('aa', 1)  # 6.1 с помощью __radd__ мы можем менять слагаемые местами без ошибки
 print(12 + r)
+
+y = BankAccount('AA', 1)  # 8.1 с помощью __radd__ мы можем менять слагаемые местами без ошибки
+print(y * 4)
+print(y * 'oooooooo')
