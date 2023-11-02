@@ -58,3 +58,34 @@ print(12 + r)
 y = BankAccount('AA', 1)  # 8.1 с помощью __radd__ мы можем менять слагаемые местами без ошибки
 print(y * 4)
 print(y * 'oooooooo')
+
+
+# ------------------- #
+
+# Сделаем класс с магическим методом __add__, которое будет сохранять значение элементов при сложении
+class Person:
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    def __repr__(self):
+        return f'Новый пользователь {self.name} с балансом {self.balance}'
+
+    def __add__(self, value):
+        print('НОВЫЙ МЕТОД СЛОЖЕНИЯ')
+        if isinstance(value, Person):
+            return Person(self.name, self.balance + value.balance)
+        if isinstance(value, (int, float)):
+            return Person(self.name, self.balance + value)
+        raise NotImplemented
+
+
+a = Person('rot', 60)
+b = Person('tort', 9)
+
+d = a + 70  # новый экземпляр создается с сохранением имени и нового баланса
+c = a + b  # можем складывать экземпляры
+e = b + a  # сохранится имя того экземпляра, который будет первым
+print(d)
+print(c)
+print(e)
