@@ -25,3 +25,9 @@ class Rect:
         print('__lt__ вызван')
         if isinstance(other, Rect):
             return self.area < other.area
+        elif isinstance(other, (int, float)):  # если второй экземпляр - простое число
+            return self.area < other  # проверяем меньше ли площадь экземпляра, чем простое число(справа)
+
+    # при проверке на == подхватывается метод __eq__ , а при проверке на <=, подхватывается __lt__
+    def __le__(self, other):  # делаем проверку на <=
+        return self == other or self < other
