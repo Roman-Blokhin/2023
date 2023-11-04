@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+# ОБОЗНАЧЕНЫ ССЫЛКИ И КУДА ОНИ ВЕДУТ - ОТСЛЕЖИВАНИЕ URL АДРЕСОВ
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),  # ПРИИСПОЛЬЗОВАНИЯ ССЫЛКИ ОТКРЫВАЕТСЯ ПАНЕЛЬ АДМИНИСТРАТОРА
 ]
