@@ -6,31 +6,41 @@ while True:
     print(Fore.RED + f'\nДействие: {popitka}' + Style.RESET_ALL)
     try:
         a = int(input('\nВведите первое число: '))
-    except ValueError:
-        print(Fore.BLUE + '\nВы не ввели число' + Style.RESET_ALL)
+    except (ValueError, TypeError):
+        print(Fore.GREEN + '\nВы не ввели число' + Style.RESET_ALL)
         try:
             a = int(input('\nВведите первое число: '))
-        except ValueError:
-            print(Fore.BLUE + '\nНу, как знаете.. До свидания.' + Style.RESET_ALL)
+        except (ValueError, TypeError):
+            print(Fore.GREEN + '\nНу, как знаете.. До свидания.' + Style.RESET_ALL)
             break
 
     try:
         b = int(input('Введите второе число: '))
-    except ValueError:
-        print(Fore.BLUE + '\nВы не ввели число' + Style.RESET_ALL)
+    except (ValueError, TypeError):
+        print(Fore.GREEN + '\nВы не ввели число' + Style.RESET_ALL)
         try:
             b = int(input('\nВведите второе число: '))
-        except ValueError:
-            print(Fore.BLUE + '\nНу, как знаете.. До свидания.' + Style.RESET_ALL)
+        except (ValueError, TypeError):
+            print(Fore.GREEN + '\nНу, как знаете.. До свидания.' + Style.RESET_ALL)
             break
 
     print('\n1. + \n2. - \n3. * \n4. / \n5. Exit')
+
     c = input('\nВыберите действие: ')
 
     summ = a + b
     sub = a - b
     mul = a * b
-    div = a / b
+
+    try:
+        div = a / b
+    except ZeroDivisionError:
+        print(Fore.GREEN + '\nДелить на 0 нельзя' + Style.RESET_ALL)
+        try:
+            c = input('\nВыберите действие: ')
+        except ZeroDivisionError:
+            print(Fore.GREEN + '\nНу, как знаете.. До свидания.' + Style.RESET_ALL)
+            break
 
     if c == '1':
         print(f'Результат: ' + Fore.YELLOW + f'{summ}' + Style.RESET_ALL)
@@ -55,4 +65,4 @@ while True:
         print(Fore.RED + '\nДо свидания' + Style.RESET_ALL)
         break
 
-    popitka +=1
+    popitka += 1
