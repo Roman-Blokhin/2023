@@ -1,6 +1,9 @@
 from colorama import Fore, Back, Style
 
+popitka = 1
+
 while True:
+    print(Fore.RED + f'\nДействие: {popitka}' + Style.RESET_ALL)
     try:
         a = int(input('\nВведите первое число: '))
     except ValueError:
@@ -51,3 +54,5 @@ while True:
     if enter == '1':
         print(Fore.RED + '\nДо свидания' + Style.RESET_ALL)
         break
+
+    popitka +=1
