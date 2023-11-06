@@ -1,11 +1,46 @@
 from tkinter import *
 
 
-def exit():
+def exit():  # функция выхода
     root.destroy()
 
 
-def python_btn():
+def returning():  # функция возврата в главное меню
+    btn1 = Button(root, text='PYTHON', command=python_btn)
+    btn1.grid(row=1, column=1, columnspan=3, sticky='we')
+
+    l1 = Label(root, text='', bg='white')
+    l1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
+    l2 = Label(root, text='', bg='white')
+    l2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
+    l3 = Label(root, text='', bg='white')
+    l3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
+
+    l4 = Label(root, text='', bg='white')
+    l4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
+    l5 = Label(root, text='', bg='white')
+    l5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
+    l6 = Label(root, text='', bg='white')
+    l6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
+
+    l7 = Label(root, text='', bg='white')
+    l7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
+    l8 = Label(root, text='', bg='white')
+    l8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
+    l9 = Label(root, text='', bg='white')
+    l9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
+
+    btn2 = Button(root, text='HTML', command=html_btn)
+    btn2.grid(row=2, column=1, columnspan=3, sticky='we')
+
+    btn3 = Button(root, text='SQL', command=sql_btn)
+    btn3.grid(row=3, column=1, columnspan=3, sticky='we')
+
+
+def python_btn():  # кнопка python
+    l1 = Label(root, text='', bg='white')  # убирает дубль кнопки под кнопкой python
+    l1.grid(row=1, column=1, columnspan=3, sticky='swen', padx=0, pady=5)
+
     b0 = Button(root, text='PYTHON', command=python_btn)
     b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
@@ -30,9 +65,12 @@ def python_btn():
     b9 = Button(root, text='9')
     b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
+    b000 = Button(root, text='RETURN', command=returning)
+    b000.grid(row=5, column=1, columnspan=3, sticky='we')
+
 
 def html_btn():
-    b0 = Button(root, text='HTML', command=python_btn)
+    b0 = Button(root, text='HTML', command=html_btn)
     b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
     b1 = Button(root, text='1')
@@ -55,10 +93,13 @@ def html_btn():
     b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
     b9 = Button(root, text='9')
     b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
+
+    b000 = Button(root, text='RETURN', command=returning)
+    b000.grid(row=5, column=1, columnspan=3, sticky='we')
 
 
 def sql_btn():
-    b0 = Button(root, text='SQL', command=python_btn)
+    b0 = Button(root, text='SQL', command=sql_btn)
     b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
     b1 = Button(root, text='1')
@@ -82,6 +123,11 @@ def sql_btn():
     b9 = Button(root, text='9')
     b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
+    b000 = Button(root, text='RETURN', command=returning)
+    b000.grid(row=5, column=1, columnspan=3, sticky='we')
+
+
+# --------------------------- #
 
 root = Tk()
 root.title('')
@@ -104,11 +150,11 @@ lbl1.grid(row=0, column=5)
 btn1 = Button(root, text='PYTHON', command=python_btn)
 btn1.grid(row=1, column=1, columnspan=3, sticky='we')
 
-btn1 = Button(root, text='HTML', command=html_btn)
-btn1.grid(row=2, column=1, columnspan=3, sticky='we')
+btn2 = Button(root, text='HTML', command=html_btn)
+btn2.grid(row=2, column=1, columnspan=3, sticky='we')
 
-btn1 = Button(root, text='SQL', command=sql_btn)
-btn1.grid(row=3, column=1, columnspan=3, sticky='we')
+btn3 = Button(root, text='SQL', command=sql_btn)
+btn3.grid(row=3, column=1, columnspan=3, sticky='we')
 
 # --------------------------- #
 
