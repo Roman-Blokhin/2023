@@ -1,33 +1,86 @@
 from tkinter import *
 
+
 def exit():
     root.destroy()
 
+
 def python_btn():
-    # l1 = Label(root, text='', bg='pink').grid(row=1, column=1)
-    b1 = Button(root, text='1').grid(row=2, column=1, sticky='swen', padx=0, pady=5)
-    b2 = Button(root, text='2').grid(row=2, column=2, sticky='swen', padx=0, pady=5)
-    b3 = Button(root, text='3').grid(row=2, column=3, sticky='swen', padx=0, pady=5)
+    b0 = Button(root, text='PYTHON', command=python_btn)
+    b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
-    b4 = Button(root, text='4').grid(row=3, column=1, sticky='swen', padx=0, pady=5)
-    b5 = Button(root, text='5').grid(row=3, column=2, sticky='swen', padx=0, pady=5)
-    b6 = Button(root, text='6').grid(row=3, column=3, sticky='swen', padx=0, pady=5)
+    b1 = Button(root, text='1')
+    b1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
+    b2 = Button(root, text='2')
+    b2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
+    b3 = Button(root, text='3')
+    b3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
 
-    b7 = Button(root, text='7').grid(row=4, column=1, sticky='swen', padx=0, pady=5)
-    b8 = Button(root, text='8').grid(row=4, column=2, sticky='swen', padx=0, pady=5)
-    b9 = Button(root, text='9').grid(row=4, column=3, sticky='swen', padx=0, pady=5)
+    b4 = Button(root, text='4')
+    b4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
+    b5 = Button(root, text='5')
+    b5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
+    b6 = Button(root, text='6')
+    b6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
+
+    b7 = Button(root, text='7')
+    b7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
+    b8 = Button(root, text='8')
+    b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
+    b9 = Button(root, text='9')
+    b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
+
 
 def html_btn():
-    l1 = Label(root, text='', bg='pink').grid(row=1, column=1)
-    b1 = Button(root, text='1').grid(row=2, column=1, sticky='we')
-    b2 = Button(root, text='2').grid(row=2, column=2, sticky='we')
-    b3 = Button(root, text='3').grid(row=2, column=3, sticky='we')
+    b0 = Button(root, text='HTML', command=python_btn)
+    b0.grid(row=1, column=1, columnspan=3, sticky='we')
+
+    b1 = Button(root, text='1')
+    b1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
+    b2 = Button(root, text='2')
+    b2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
+    b3 = Button(root, text='3')
+    b3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
+
+    b4 = Button(root, text='4')
+    b4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
+    b5 = Button(root, text='5')
+    b5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
+    b6 = Button(root, text='6')
+    b6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
+
+    b7 = Button(root, text='7')
+    b7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
+    b8 = Button(root, text='8')
+    b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
+    b9 = Button(root, text='9')
+    b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
+
 
 def sql_btn():
-    l1 = Label(root, text='', bg='pink').grid(row=1, column=1)
-    b1 = Button(root, text='1').grid(row=3, column=1, sticky='we')
-    b2 = Button(root, text='2').grid(row=3, column=2, sticky='we')
-    b3 = Button(root, text='3').grid(row=3, column=3, sticky='we')
+    b0 = Button(root, text='SQL', command=python_btn)
+    b0.grid(row=1, column=1, columnspan=3, sticky='we')
+
+    b1 = Button(root, text='1')
+    b1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
+    b2 = Button(root, text='2')
+    b2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
+    b3 = Button(root, text='3')
+    b3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
+
+    b4 = Button(root, text='4')
+    b4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
+    b5 = Button(root, text='5')
+    b5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
+    b6 = Button(root, text='6')
+    b6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
+
+    b7 = Button(root, text='7')
+    b7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
+    b8 = Button(root, text='8')
+    b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
+    b9 = Button(root, text='9')
+    b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
 
 root = Tk()
@@ -48,7 +101,7 @@ lbl1.grid(row=0, column=5)
 
 # --------------------------- #
 
-btn1 = Button(root, text='Python', command=python_btn)
+btn1 = Button(root, text='PYTHON', command=python_btn)
 btn1.grid(row=1, column=1, columnspan=3, sticky='we')
 
 btn1 = Button(root, text='HTML', command=html_btn)
