@@ -15,10 +15,11 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 
 # ОБОЗНАЧЕНЫ ССЫЛКИ И КУДА ОНИ ВЕДУТ - ОТСЛЕЖИВАНИЕ URL АДРЕСОВ
 
 urlpatterns = [
-    path('admin/', admin.site.urls),  # ПРИИСПОЛЬЗОВАНИЯ ССЫЛКИ ОТКРЫВАЕТСЯ ПАНЕЛЬ АДМИНИСТРАТОРА
+    path('admin/', admin.site.urls),  # ПРИ ИСПОЛЬЗОВАНИЯ ССЫЛКИ ОТКРЫВАЕТСЯ ПАНЕЛЬ АДМИНИСТРАТОРА
+    path('', include('main.urls')),  # отслеживаем главную страницу, url для нее не передаем
 ]
