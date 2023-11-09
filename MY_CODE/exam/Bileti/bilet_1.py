@@ -44,3 +44,5 @@ class Page:
     def add(self, obj):
         self.obj_list.append(obj)
 
+    def show(self):
+        return ' '.join(f'{self.obj_list}')
