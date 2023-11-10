@@ -152,34 +152,34 @@ def ticket_SQL_99():
 # --------------------------- функция возврата в главное меню --------------------------- #
 
 def returning():
-    btn1 = Button(root, text='PYTHON', command=python_btn)
+    btn1 = Button(root, text='PYTHON', font=("Comic Sans MS", 12, "normal"), command=python_btn)
     btn1.grid(row=1, column=1, columnspan=3, sticky='we')
 
-    l1 = Label(root, text='', bg='white')
+    l1 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
-    l2 = Label(root, text='', bg='white')
+    l2 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
-    l3 = Label(root, text='', bg='white')
+    l3 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
 
-    l4 = Label(root, text='', bg='white')
+    l4 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
-    l5 = Label(root, text='', bg='white')
+    l5 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
-    l6 = Label(root, text='', bg='white')
+    l6 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
 
-    l7 = Label(root, text='', bg='white')
+    l7 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
-    l8 = Label(root, text='', bg='white')
+    l8 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
-    l9 = Label(root, text='', bg='white')
+    l9 = Label(root, text='', bg='white', font=("Comic Sans MS", 12, "normal"))
     l9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
-    btn2 = Button(root, text='HTML', command=html_btn)
+    btn2 = Button(root, text='HTML', font=("Comic Sans MS", 12, "normal"), command=html_btn)
     btn2.grid(row=2, column=1, columnspan=3, sticky='we')
 
-    btn3 = Button(root, text='SQL', command=sql_btn)
+    btn3 = Button(root, text='SQL', font=("Comic Sans MS", 12, "normal"), command=sql_btn)
     btn3.grid(row=3, column=1, columnspan=3, sticky='we')
 
 
@@ -189,93 +189,99 @@ def python_btn():
     l1 = Label(root, text='', bg='white')  # убирает дубль кнопки под кнопкой python
     l1.grid(row=1, column=1, columnspan=3, sticky='swen', padx=0, pady=5)
 
-    b0 = Button(root, text='PYTHON', command=python_btn)
+    b0 = Button(root, text='PYTHON', font=("Comic Sans MS", 12, "normal"), command=python_btn)
     b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
-    b1 = Button(root, text='1', command=ticket_python_11)
+    b1 = Button(root, text='1', font=("Comic Sans MS", 12, "normal"), command=ticket_python_11)
     b1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
-    b2 = Button(root, text='2', command=ticket_python_22)
+    b2 = Button(root, text='2', font=("Comic Sans MS", 12, "normal"), command=ticket_python_22)
     b2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
-    b3 = Button(root, text='3', command=ticket_python_33)
+    b3 = Button(root, text='3', font=("Comic Sans MS", 12, "normal"), command=ticket_python_33)
     b3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
 
-    b4 = Button(root, text='4', command=ticket_python_44)
+    b4 = Button(root, text='4', font=("Comic Sans MS", 12, "normal"), command=ticket_python_44)
     b4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
-    b5 = Button(root, text='5', command=ticket_python_55)
+    b5 = Button(root, text='5', font=("Comic Sans MS", 12, "normal"), command=ticket_python_55)
     b5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
-    b6 = Button(root, text='6', command=ticket_python_66)
+    b6 = Button(root, text='6', font=("Comic Sans MS", 12, "normal"), command=ticket_python_66)
     b6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
 
-    b7 = Button(root, text='7', command=ticket_python_77)
+    b7 = Button(root, text='7', font=("Comic Sans MS", 12, "normal"), command=ticket_python_77)
     b7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
-    b8 = Button(root, text='8', command=ticket_python_88)
+    b8 = Button(root, text='8', font=("Comic Sans MS", 12, "normal"), command=ticket_python_88)
     b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
-    b9 = Button(root, text='9', command=ticket_python_99)
+    b9 = Button(root, text='9', font=("Comic Sans MS", 12, "normal"), command=ticket_python_99)
     b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
-    b000 = Button(root, text='RETURN', command=returning)
+    b000 = Button(root, text='RETURN', font=("Comic Sans MS", 12, "normal"), command=returning)
     b000.grid(row=5, column=1, columnspan=3, sticky='we')
 
 
 # --------------------------- функция для кнопки HTML --------------------------- #
 
 def html_btn():
-    b0 = Button(root, text='HTML', command=html_btn)
+    l1 = Label(root, text='', bg='white')  # убирает дубль кнопки под кнопкой python
+    l1.grid(row=1, column=1, columnspan=3, sticky='swen', padx=0, pady=5)
+
+    b0 = Button(root, text='HTML', font=("Comic Sans MS", 12, "normal"), command=html_btn)
     b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
-    b1 = Button(root, text='1', command=ticket_HTML_11)
+    b1 = Button(root, text='1', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_11)
     b1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
-    b2 = Button(root, text='2', command=ticket_HTML_22)
+    b2 = Button(root, text='2', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_22)
     b2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
-    b3 = Button(root, text='3', command=ticket_HTML_33)
+    b3 = Button(root, text='3', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_33)
     b3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
 
-    b4 = Button(root, text='4', command=ticket_HTML_44)
+    b4 = Button(root, text='4', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_44)
     b4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
-    b5 = Button(root, text='5', command=ticket_HTML_55)
+    b5 = Button(root, text='5', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_55)
     b5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
-    b6 = Button(root, text='6', command=ticket_HTML_66)
+    b6 = Button(root, text='6', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_66)
     b6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
 
-    b7 = Button(root, text='7', command=ticket_HTML_77)
+    b7 = Button(root, text='7', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_77)
     b7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
-    b8 = Button(root, text='8', command=ticket_HTML_88)
+    b8 = Button(root, text='8', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_88)
     b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
-    b9 = Button(root, text='9', command=ticket_HTML_99)
+    b9 = Button(root, text='9', font=("Comic Sans MS", 12, "normal"), command=ticket_HTML_99)
     b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
-    b000 = Button(root, text='RETURN', command=returning)
+    b000 = Button(root, text='RETURN', font=("Comic Sans MS", 12, "normal"), command=returning)
     b000.grid(row=5, column=1, columnspan=3, sticky='we')
 
 
 # --------------------------- функция для кнопки SQL --------------------------- #
 
 def sql_btn():
-    b0 = Button(root, text='SQL', command=sql_btn)
+    l1 = Label(root, text='', bg='white')  # убирает дубль кнопки под кнопкой python
+    l1.grid(row=1, column=1, columnspan=3, sticky='swen', padx=0, pady=5)
+
+    b0 = Button(root, text='SQL', font=("Comic Sans MS", 12, "normal"), command=sql_btn)
     b0.grid(row=1, column=1, columnspan=3, sticky='we')
 
-    b1 = Button(root, text='1', command=ticket_SQL_11)
+    b1 = Button(root, text='1', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_11)
     b1.grid(row=2, column=1, sticky='swen', padx=0, pady=5)
-    b2 = Button(root, text='2', command=ticket_SQL_22)
+    b2 = Button(root, text='2', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_22)
     b2.grid(row=2, column=2, sticky='swen', padx=0, pady=5)
-    b3 = Button(root, text='3', command=ticket_SQL_33)
+    b3 = Button(root, text='3', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_33)
     b3.grid(row=2, column=3, sticky='swen', padx=0, pady=5)
 
-    b4 = Button(root, text='4', command=ticket_SQL_44)
+    b4 = Button(root, text='4', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_44)
     b4.grid(row=3, column=1, sticky='swen', padx=0, pady=5)
-    b5 = Button(root, text='5', command=ticket_SQL_55)
+    b5 = Button(root, text='5', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_55)
     b5.grid(row=3, column=2, sticky='swen', padx=0, pady=5)
-    b6 = Button(root, text='6', command=ticket_SQL_66)
+    b6 = Button(root, text='6', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_66)
     b6.grid(row=3, column=3, sticky='swen', padx=0, pady=5)
 
-    b7 = Button(root, text='7', command=ticket_SQL_77)
+    b7 = Button(root, text='7', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_77)
     b7.grid(row=4, column=1, sticky='swen', padx=0, pady=5)
-    b8 = Button(root, text='8', command=ticket_SQL_88)
+    b8 = Button(root, text='8', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_88)
     b8.grid(row=4, column=2, sticky='swen', padx=0, pady=5)
-    b9 = Button(root, text='9', command=ticket_SQL_99)
+    b9 = Button(root, text='9', font=("Comic Sans MS", 12, "normal"), command=ticket_SQL_99)
     b9.grid(row=4, column=3, sticky='swen', padx=0, pady=5)
 
-    b000 = Button(root, text='RETURN', command=returning)
+    b000 = Button(root, text='RETURN', font=("Comic Sans MS", 12, "normal"), command=returning)
     b000.grid(row=5, column=1, columnspan=3, sticky='we')
 
 
@@ -283,34 +289,34 @@ def sql_btn():
 
 root = Tk()
 root.title('')
-root.geometry('950x650+100+100')
+root.geometry('1150x650+100+100')
 root.config(bg='')
 
 # --------------------------- отступы с разных сторон --------------------------- #
 
-lbl1 = Label(root, text='')
+lbl1 = Label(root, text='', font=("Comic Sans MS", 12, "normal"))
 lbl1.grid(row=0, column=0)
 
-lbl1 = Label(root, text='')
+lbl1 = Label(root, text='', font=("Comic Sans MS", 12, "normal"))
 lbl1.grid(row=0, column=4)
 
-lbl1 = Label(root, text='')
+lbl1 = Label(root, text='', font=("Comic Sans MS", 12, "normal"))
 lbl1.grid(row=0, column=5)
 
 # --------------------------- основные кнопки меню --------------------------- #
 
-btn1 = Button(root, text='PYTHON', command=python_btn)
+btn1 = Button(root, text='PYTHON', font=("Comic Sans MS", 12, "normal"), command=python_btn)
 btn1.grid(row=1, column=1, columnspan=3, sticky='we')
 
-btn2 = Button(root, text='HTML', command=html_btn)
+btn2 = Button(root, text='HTML', font=("Comic Sans MS", 12, "normal"), command=html_btn)
 btn2.grid(row=2, column=1, columnspan=3, sticky='we')
 
-btn3 = Button(root, text='SQL', command=sql_btn)
+btn3 = Button(root, text='SQL', font=("Comic Sans MS", 12, "normal"), command=sql_btn)
 btn3.grid(row=3, column=1, columnspan=3, sticky='we')
 
 # --------------------------- окно вывода инфоррмации --------------------------- #
 
-win = Text(root, bg='grey')
+win = Text(root, bg='grey', font=("Comic Sans MS", 12, "normal"))
 win.grid(row=1, column=6, rowspan=10)
 
 # --------------------------- размер колонок и строк --------------------------- #
