@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from django.conf import settings
+from django.conf.urls.static import static
+
 # ОБОЗНАЧЕНЫ ССЫЛКИ И КУДА ОНИ ВЕДУТ - ОТСЛЕЖИВАНИЕ URL АДРЕСОВ
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # ПРИ ИСПОЛЬЗОВАНИЯ ССЫЛКИ ОТКРЫВАЕТСЯ ПАНЕЛЬ АДМИНИСТРАТОРА
     path('', include('main.urls')),  # отслеживаем главную страницу, url для нее не передаем
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # добавляем, чтобы статические файлы подключились

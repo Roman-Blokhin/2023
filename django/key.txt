@@ -89,5 +89,31 @@ lay_out.pyю Для этого мы будем использовать конс
 создаем папку main(название нашего приложения), по аналогии с папкой templates.  Это делается для того, чтобы когда мы
 будем собирать наш сайт в одно, чтобы программа не перезаписала файлы в папках static из всех наших приложений в одно.
 Далее создаем папки css(будут все стили) и img(будут все картинки) и js(все js файлы)
-
 13.1 В папке css создаем новый файл main.css
+13.2 Подключаем в файле lay_out.html то, что мы будем работать со всеми статическими файлами из папки static:
+
+{% load static %}
+
+13.3 прописываем с помощью link в head ссылку на наш файл main.css:
+
+<link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+13.4 В файле main.css пишем первый стиль для теста
+13.5 Прописываем в файле settings.py - STATICFILES_DIRS, скопированную из документации, чтобы проект нашел все
+статические файлы:
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
+
+13.6 Чтобы точно статические файлы подключились, мы копируем из документации код в файл urls.py, который лежит в
+папке blog:
+
+from django.conf import settings
+from django.conf.urls.static import static
+
+urlpatterns = [
+    # ... the rest of your URLconf goes here ...
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  - копируем строчку от знака + в паттернах
+-----------------------
+
