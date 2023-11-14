@@ -1,13 +1,9 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>О нас</title>
-</head>
-<body>
-  <p>О нас</p>
-</body>
-</html>
+{% extends 'main/layout.html' %}  <!-- файл, у которого наследуем код -->
+
+{% block title %}
+    <title>Все как у людей</title>
+{% endblock %}
+
+{% block body %}
+    <p>Все как у людей</p>
+{% endblock %}
