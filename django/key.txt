@@ -117,3 +117,15 @@ urlpatterns = [
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  - копируем строчку от знака + в паттернах
 -----------------------
 
+14. Делаем страницу сайта:
+14.1 Добавил картинку в папку static/img
+14.2 Начинаем писать код в файле lay_out.html, добавляем в body боковую панель <aside></aside> и основной центральный
+блок <main></main>
+14.3 В <aside></aside> добавляем:
+- логотип, картинки также подключаются, как и файлы: <img src="{% static 'main/img/logo.ico' %}" alt="logo">
+- <span class="logo">Сайт Визитка</span> - контейнер с названием и стилем
+- <h3>Навигация</h3> - заголовок для меню
+- само меню с навигацией - lu>li*3, для страниц прописываем ссылки: <a href=""><li>Главная</li></a>
+14.4 Подключаем сервис с иконками: https://fontawesome.com/,
+вставляя в head ссылку <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.8.2/css/all.css">
+- ищем иконку, копируем ее ссылку и вставляем в код, пример: <i class="fa-solid fa-igloo">
