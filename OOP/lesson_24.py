@@ -14,3 +14,9 @@ class Vector:
             return self.values[item]  # возвращаем атрибут по индексу
         else:
             raise IndexError ('Индекс за пределами космического пространства')  # условие, если индекса нет в списке
+        
+    def __setitem__(self, key, value):  # функция, которая меняет значение аргумента по индексу
+        if 0 <= key < len(self.values):  # key(ключ) - это индекс, values - новое значение
+            self.values[key] = value  # присваиваем новое значение по индексу
+        else:
+            raise IndexError ('Индекс за пределами космического пространства')
