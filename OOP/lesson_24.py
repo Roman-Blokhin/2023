@@ -26,3 +26,16 @@ class Vector:
             del self.values[key]  # удалить значение у объекта по индексу key
         else:
             raise IndexError ('Индекс за пределами космического пространства')
+
+# МЫ МОЖЕМ ИЗМЕНИТЬ ОБРАЩЕНИЕ ПО ЭЛЕМЕНТУ, ИНДЕКС БУДЕТ НАЧИНАТЬСЯ НЕ С 0, А С 1
+
+class Vect:
+    def __init__(self, *args):
+        self.values = list(args)
+
+    def __repr__(self):
+        return str(self.values)
+
+    def __getitem__(self, item):
+        if 1 <= item <= len(self.values):  # условие поиска индекса от 1 до максимальной длины списка включительно
+            return self.values[item-1]  # значение устанавливаем -1, искусственно уменьшаем значение индекса
