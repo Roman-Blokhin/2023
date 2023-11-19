@@ -39,3 +39,28 @@ class Vect:
     def __getitem__(self, item):
         if 1 <= item <= len(self.values):  # условие поиска индекса от 1 до максимальной длины списка включительно
             return self.values[item-1]  # значение устанавливаем -1, искусственно уменьшаем значение индекса
+
+# СОЗДАЕМ РАЗРЯЖЕННЫЙ МАССИВ, КОЛЛЕКЦИЯ, В КОТОРОЙ НЕКОТОРЫЕ ЗНАЧЕНИЯ(ИНДЕКСЫ) ПРОПУШЕНЫ [1,2,4,..,..,..,89]
+
+class Vec:  # индекс у нас начинается с 1, мы изменили эти параметры в __getitem__ и __setitem__
+    def __init__(self, *args):
+        self.values = list(args)
+
+    def __repr__(self):
+        return str(self.values)
+
+    def __getitem__(self, item):
+        if 1 <= item < len(self.values):
+            return self.values[item-1]
+        else:
+            raise IndexError ('Индекс за пределами космического пространства')
+
+    def __setitem__(self, key, value):
+        if 1 <= key < len(self.values):
+            self.values[key-1] = value
+        elif key > len(self.values):  # если число больше, чем длина коллекции:
+            diff = key - len(self.values)  # находим разницу между искомым индексом и крайним индексом в коллекции
+            self.values.extend([None]*diff)  # расширяем список с помощью метода extend. Ставим нули по числу разницы
+            self.values[key-1] = value  # обращаемся к нашему ключу(индексу) и присваиваем новое значение value
+        else:
+            raise IndexError ('Индекс за пределами космического пространства')
