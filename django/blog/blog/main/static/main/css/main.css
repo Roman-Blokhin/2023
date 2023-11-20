@@ -2,7 +2,6 @@
 
 body {
     background: LightYellow;
-
 }
 
 aside {
@@ -13,5 +12,21 @@ aside {
     border-right: 5px solid DimGray;  /* граница с основным блоком */
     padding: 2.5%;  /* отступ внутри раздела aside */
     color: DarkSlateGray;  /* цвет текста */
+}
+
+aside img {
+    float: left;
+    width: 100px;
+}
+
+aside .logo {
+    font-size: 25px;  /* размер шрифта */
+    margin-left: 20px;  /* отступ слева */
+    font-weight: bold;  /* жирный шрифт */
+    position: relative;  /* размещение относительно своего исходного положения */
+    top: 25px;
+}
+
+aside h3 {
 
 }
