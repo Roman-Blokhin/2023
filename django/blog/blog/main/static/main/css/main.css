@@ -20,13 +20,32 @@ aside img {
 }
 
 aside .logo {
-    font-size: 25px;  /* размер шрифта */
+    font-size: 28px;  /* размер шрифта */
     margin-left: 20px;  /* отступ слева */
-    font-weight: bold;  /* жирный шрифт */
+    font-weight: normal;  /* жирный шрифт */
     position: relative;  /* размещение относительно своего исходного положения */
     top: 25px;
 }
 
 aside h3 {
+    margin-top: 70px;
+    font-size: 23px;
+}
 
+aside ul {list-style: None}  /* убираем кружочки у каждого пункта в списке */
+
+aside ul li {  /* обращаемся к каждому элементу в списке */
+    display: block;  /* каждый элемент блочный */
+    margin-top: 10px;
+    Color: DimGray;
+    transition: all .6s ease;  /* добавляем плавности к увеличению текста при наведении на 6 миллисекунд */
+}
+
+a {
+    text-decoration: none;  /* убирает нижнее подчеркивание у ссылок */
+}
+
+aside ul li:hover, aside ul a:hover {  /* псевдокласс, который действует при наведении */
+    Color: SaddleBrown;
+    transform: scale(1.05);  /* меняет размер на 5% при наведении */
 }
