@@ -128,4 +128,4 @@ urlpatterns = [
 - само меню с навигацией - ul>li*3, для страниц прописываем ссылки: <a href=""><li>Главная</li></a>
 14.4 Подключаем сервис с иконками: https://fontawesome.com/,
 вставляя в head ссылку <link rel="stylesheet" href="http://use.fontawesome.com/releases/v5.8.2/css/all.css">
-- ищем иконку, копируем ее ссылку и вставляем в код, пример: <i class="fa-solid fa-igloo">
+- ищем иконку, копируем ее ссылку и вставляем в код, пример: <i class="fa fa-igloo">
