@@ -1,5 +1,17 @@
 /* ЗДЕСЬ БУДУТ ВСЕ СТИЛИ ПРИЛОЖЕНИЯ MAIN */
 
 body {
-    background: LightPink
+    background: LightYellow;
+
+}
+
+aside {
+    float: left;  /* размещение на странице */
+    background: Moccasin;
+    weight: 20%;  /* ширина блока */
+    height: 100vh;  /* высота относительно размера страницы */
+    border-right: 5px solid DimGray;  /* граница с основным блоком */
+    padding: 2.5%;  /* отступ внутри раздела aside */
+    color: DarkSlateGray;  /* цвет текста */
+
 }
