@@ -16,6 +16,10 @@
         <button class="btn btn-danger">  <!-- создали кнопку с классом стилей из bootstrap -->
             Нажми
         </button>
+
+        {% for el in values %}  <!-- создаем цикл -->
+            <p>{{ el }}</p>
+        {% endfor %}  <!-- обязательно закрываем цикл -->
     </div>
 
     {% include 'main/test.html' %}  <!-- Подключаем код из другого файла для теста -->
