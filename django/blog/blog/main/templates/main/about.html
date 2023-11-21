@@ -7,8 +7,16 @@
 {% endblock %}
 
 {% block body %}
-    <h3>Здесь будет конец истории..</h3>
-    <p style="color: #FF0000"><i>Вот это была история...</i></p>
+
+    <div class="features">
+        <h1>Информация обо мне</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis cupiditate deleniti dolorem
+            dolorum ducimus eum explicabo fugit impedit iusto labore, magni nulla placeat quidem sapiente veniam vero
+            voluptate! Facere.</p>
+        <button class="btn btn-danger">  <!-- создали кнопку с классом стилей из bootstrap -->
+            Нажми
+        </button>
+    </div>
 
     {% include 'main/test.html' %}  <!-- Подключаем код из другого файла для теста -->
 {% endblock %}
