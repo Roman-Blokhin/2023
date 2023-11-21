@@ -3,12 +3,12 @@
 <!-- теперь прописываем блоки нашего кода, можно писать не block, а section -->
 
 {% block title %}
-    Главная страница
+    {{ title }}
 {% endblock %}
 
 {% block body %}
     <div class="features">
-        <h1>Главная страница</h1>
+        <h1>{{ title }}</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores corporis cupiditate deleniti dolorem
             dolorum ducimus eum explicabo fugit impedit iusto labore, magni nulla placeat quidem sapiente veniam vero
             voluptate! Facere.</p>
