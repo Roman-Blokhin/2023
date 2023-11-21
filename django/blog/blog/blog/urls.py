@@ -24,5 +24,5 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),  # ПРИ ИСПОЛЬЗОВАНИЯ ССЫЛКИ ОТКРЫВАЕТСЯ ПАНЕЛЬ АДМИНИСТРАТОРА
-    path('main/', include('main.urls')),  # отслеживаем главную страницу, url для нее не передаем
+    path('', include('main.urls')),  # отслеживаем главную страницу, url для нее не передаем
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)  # добавляем, чтобы статические файлы подключились
