@@ -23,6 +23,10 @@ btn2.grid(row=1, column=3)
 
 Label(root, text='', bg='pink').grid(row=0, column=0)
 Label(root, text='', bg='pink').grid(row=0, column=2)
+Label(root, text='', bg='pink').grid(row=2, column=2)
+
+win = Entry(root)
+win.grid(row=3, column=1, columnspan=5)
 
 root.grid_rowconfigure(0, minsize=30)
 root.grid_columnconfigure(0, minsize=30)
