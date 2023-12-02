@@ -4,7 +4,8 @@ import random as r
 
 def com_1():
     num_1 = r.randint(0, 100)
-    Label(root, text=num_1).grid(row=2, column=1)
+    win.delete(0, END)
+    win.insert(END, num_1)
 
 
 def com_2():
