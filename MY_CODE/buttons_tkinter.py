@@ -10,7 +10,8 @@ def com_1():
 
 def com_2():
     num_2 = r.randint(0, 100)
-    Label(root, text=num_2).grid(row=2, column=3)
+    win_2.delete(0, END)
+    win_2.insert(END, num_2)
 
 
 root = Tk()
@@ -26,8 +27,11 @@ Label(root, text='', bg='pink').grid(row=0, column=0)
 Label(root, text='', bg='pink').grid(row=0, column=2)
 Label(root, text='', bg='pink').grid(row=2, column=2)
 
-win = Entry(root)
-win.grid(row=3, column=1, columnspan=5)
+win = Entry(root, width=3)
+win.grid(row=3, column=1)
+
+win_2 = Entry(root, width=3)
+win_2.grid(row=3, column=3)
 
 root.grid_rowconfigure(0, minsize=30)
 root.grid_columnconfigure(0, minsize=30)
