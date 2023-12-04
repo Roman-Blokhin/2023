@@ -3,13 +3,20 @@ import random as r
 
 
 def com_1():
-    num_1 = r.randint(0, 100)
-    num_2 = r.randint(0, 100)
+    num_1 = r.randint(0, 10)
+    num_2 = r.randint(0, 10)
 
     win.delete(0, END)
     win.insert(END, num_1)
     win_2.delete(0, END)
     win_2.insert(END, num_2)
+
+    if num_1 > num_2:
+        Label(root, text='ПЕРВЫЙ ИГРОК ПОБЕДИЛ').grid(row=4, column=1, columnspan=5)
+    elif num_1 == num_2:
+        Label(root, text='НИЧЬЯ').grid(row=4, column=1, columnspan=5)
+    else:
+        Label(root, text='ВТОРОЙ ИГРОК ПОБЕДИЛ').grid(row=4, column=1, columnspan=5)
 
 
 root = Tk()
