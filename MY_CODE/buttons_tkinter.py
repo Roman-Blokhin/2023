@@ -4,12 +4,10 @@ import random as r
 
 def com_1():
     num_1 = r.randint(0, 100)
+    num_2 = r.randint(0, 100)
+
     win.delete(0, END)
     win.insert(END, num_1)
-
-
-def com_2():
-    num_2 = r.randint(0, 100)
     win_2.delete(0, END)
     win_2.insert(END, num_2)
 
@@ -18,10 +16,8 @@ root = Tk()
 root.geometry('200x130+300+300')
 root.config(bg='pink')
 
-btn1 = Button(root, text='Игрок 1', command=com_1)
-btn1.grid(row=1, column=1)
-btn2 = Button(root, text='Игрок 2', command=com_2)
-btn2.grid(row=1, column=3)
+btn1 = Button(root, text='Старт', command=com_1)
+btn1.grid(row=1, column=1, columnspan=3)
 
 Label(root, text='', bg='pink').grid(row=0, column=0)
 Label(root, text='', bg='pink').grid(row=0, column=2)
