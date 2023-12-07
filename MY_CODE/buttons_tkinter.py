@@ -12,14 +12,20 @@ def com_1():
     win_2.insert(END, num_2)
 
     if num_1 > num_2:
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').\
+            grid(row=4, column=1, columnspan=5)
         Label(root, text='ПЕРВЫЙ ИГРОК ПОБЕДИЛ', font=("Comic Sans MS", 12, "normal"), bg='pink').\
-            grid(row=4, column=1, columnspan=4)
+            grid(row=5, column=1, columnspan=5)
     elif num_1 == num_2:
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').\
+            grid(row=4, column=1, columnspan=5)
         Label(root, text='                  НИЧЬЯ                 ', font=("Comic Sans MS", 12, "normal"), bg='pink').\
-            grid(row=4, column=1, columnspan=4)
+            grid(row=5, column=1, columnspan=5)
     else:
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').\
+            grid(row=4, column=1, columnspan=5)
         Label(root, text='ВТОРОЙ ИГРОК ПОБЕДИЛ', font=("Comic Sans MS", 12, "normal"), bg='pink').\
-            grid(row=4, column=1, columnspan=4)
+            grid(row=5, column=1, columnspan=5)
 
 
 root = Tk()
@@ -27,7 +33,7 @@ root.geometry('500x530+300+300')
 root.config(bg='pink')
 
 btn1 = Button(root, text='Старт', font=("Comic Sans MS", 12, "normal"), command=com_1)
-btn1.grid(row=1, column=1, columnspan=5)
+btn1.grid(row=1, column=1, columnspan=4)
 
 Label(root, text='', bg='pink', font=("Comic Sans MS", 12, "normal")).grid(row=0, column=0)
 Label(root, text='', bg='pink', font=("Comic Sans MS", 12, "normal")).grid(row=0, column=2)
