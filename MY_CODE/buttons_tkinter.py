@@ -12,14 +12,15 @@ def com_1():
     win_2.insert(END, num_2)
 
     if num_1 > num_2:
-        Label(root, text='ПОБЕДИЛ 1 ИГРОК', font=("Comic Sans MS", 12, "normal"), bg='pink').\
-            grid(row=6, column=0)
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=6, column=0)
+        Label(root, text=' ПОБЕДИЛ 1 ИГРОК', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=7, column=0)
     elif num_1 == num_2:
-        Label(root, text=' НИЧЬЯ                 ', font=("Comic Sans MS", 12, "normal"), bg='pink').\
-            grid(row=6, column=0)
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=6, column=0)
+        Label(root, text='НИЧЬЯ                    ', font=("Comic Sans MS", 12, "normal"), bg='pink').\
+            grid(row=7, column=0)
     else:
-        Label(root, text='ПОБЕДИЛ 2 ИГРОК', font=("Comic Sans MS", 12, "normal"), bg='pink').\
-            grid(row=6, column=0)
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=6, column=0)
+        Label(root, text=' ПОБЕДИЛ 2 ИГРОК', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=7, column=0)
 
 
 root = Tk()
