@@ -14,13 +14,29 @@ def com_1():
     if num_1 > num_2:
         Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=6, column=0)
         Label(root, text=' ПОБЕДИЛ 1 ИГРОК', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=7, column=0)
+        root.config(bg='red')
     elif num_1 == num_2:
-        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=6, column=0)
-        Label(root, text='НИЧЬЯ                    ', font=("Comic Sans MS", 12, "normal"), bg='pink').\
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='grey').grid(row=6, column=0)
+        Label(root, text='  НИЧЬЯ                      ', font=("Comic Sans MS", 12, "normal"), bg='grey').\
             grid(row=7, column=0)
+        root.config(bg='grey')
+        Label(root, text='', bg='grey', font=("Comic Sans MS", 12, "normal")).grid(row=0, column=0)
+        Label(root, text='', bg='grey', font=("Comic Sans MS", 12, "normal")).grid(row=0, column=2)
+        Label(root, text='', bg='grey', font=("Comic Sans MS", 12, "normal")).grid(row=2, column=2)
+        Label(root, text='ПЕРВЫЙ ИГРОК: ', bg='grey', font=("Comic Sans MS", 12, "normal")).grid(row=3, column=0)
+        Label(root, text='', bg='grey', font=("Comic Sans MS", 12, "normal")).grid(row=4, column=0)
+        Label(root, text='ВТОРОЙ ИГРОК: ', bg='grey', font=("Comic Sans MS", 12, "normal")).grid(row=5, column=0)
     else:
-        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=6, column=0)
-        Label(root, text=' ПОБЕДИЛ 2 ИГРОК', font=("Comic Sans MS", 12, "normal"), bg='pink').grid(row=7, column=0)
+        Label(root, text='', font=("Comic Sans MS", 12, "normal"), bg='yellow').grid(row=6, column=0)
+        Label(root, text='ПОБЕДИЛ 2 ИГРОК ', font=("Comic Sans MS", 12, "normal"), bg='yellow').grid(row=7, column=0)
+        root.config(bg='yellow')
+        Label(root, text='', bg='yellow', font=("Comic Sans MS", 12, "normal")).grid(row=0, column=0)
+        Label(root, text='', bg='yellow', font=("Comic Sans MS", 12, "normal")).grid(row=0, column=2)
+        Label(root, text='', bg='yellow', font=("Comic Sans MS", 12, "normal")).grid(row=2, column=2)
+        Label(root, text='ПЕРВЫЙ ИГРОК: ', bg='yellow', font=("Comic Sans MS", 12, "normal")).grid(row=3, column=0)
+        Label(root, text='', bg='yellow', font=("Comic Sans MS", 12, "normal")).grid(row=4, column=0)
+        Label(root, text='ВТОРОЙ ИГРОК: ', bg='yellow', font=("Comic Sans MS", 12, "normal")).grid(row=5, column=0)
+
 
 
 root = Tk()
@@ -46,8 +62,8 @@ win_2.grid(row=5, column=1)
 root.grid_rowconfigure(0, minsize=30)
 root.grid_rowconfigure(1, minsize=30)
 root.grid_rowconfigure(2, minsize=30)
-root.grid_columnconfigure(0, minsize=100)
-root.grid_columnconfigure(1, minsize=100)
-root.grid_columnconfigure(2, minsize=100)
+root.grid_columnconfigure(0, minsize=120)
+root.grid_columnconfigure(1, minsize=120)
+root.grid_columnconfigure(2, minsize=120)
 
 root.mainloop()
