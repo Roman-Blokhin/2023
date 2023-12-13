@@ -1,14 +1,19 @@
 from tkinter import *
 
 
-# ----------------------------- 11. ФУНКЦИИ -----------------------------
+# ----------------------------- ФУНКЦИИ -----------------------------
 
-# подключаем функцию к параметрам текстового поля, чтобы можно было менять
+# 11 подключаем функцию к параметрам текстового поля, чтобы можно было менять
 def change_color(theme):
     text_fild['bg'] = view_color[theme]['color_bg']
     text_fild['fg'] = view_color[theme]['color_fg']
     text_fild['insertbackground'] = view_color[theme]['color_cursor']
     text_fild['selectbackground'] = view_color[theme]['color_select_bg']
+
+
+# 12.1 подключаем шрифты к меню
+def change_font(fontss):
+    text_fild['font'] = fonts[fontss]['font']
 
 
 # ----------------------------- ОКНО -----------------------------
@@ -33,6 +38,21 @@ view_color = {  # прописываем словари с цветами по �
     }
 }
 
+# ----------------------------- 12. Шрифты -----------------------------
+
+fonts = {
+    'Arial': {
+        'font': ('Arial', 14, 'normal')
+    },
+    'Comic Sans MS': {
+        'font': ('Comic Sans MS', 14, 'normal')
+    },
+    'Times New Roman': {
+        'font': ('Times New Roman', 14, 'normal')
+    },
+
+}
+
 # ----------------------------- МЕНЮ -----------------------------
 
 main_menu = Menu(root)  # 4. создаем главное меню
@@ -49,15 +69,15 @@ root.config(menu=file_menu)  # устанавливаем меню в наше �
 view_menu = Menu(main_menu, tearoff=0)
 
 view_menu_sub = Menu(view_menu, tearoff=0)
-view_menu_sub.add_command(label='Темная', command=lambda: change_color('dark'))  # 11. прописываем команду
+view_menu_sub.add_command(label='Темная', command=lambda: change_color('dark'))  # 11.1 прописываем команду
 view_menu_sub.add_command(label='Светлая', command=lambda: change_color('light'))
 view_menu_sub.add_command(label='Серая', command=lambda: change_color('grey'))
 view_menu.add_cascade(menu=view_menu_sub, label='Тема')
 
 font_menu_sub = Menu(view_menu, tearoff=0)
-font_menu_sub.add_command(label='Arial')
-font_menu_sub.add_command(label='Comic Sans MS')
-font_menu_sub.add_command(label='Times New Roman')
+font_menu_sub.add_command(label='Arial', command=lambda: change_font('Arial'))
+font_menu_sub.add_command(label='Comic Sans MS', command=lambda: change_font('Comic Sans MS'))
+font_menu_sub.add_command(label='Times New Roman', command=lambda: change_font('Times New Roman'))
 view_menu.add_cascade(menu=font_menu_sub, label='Шрифт')
 
 root.config(menu=view_menu)
@@ -90,7 +110,8 @@ text_fild = Text(f_text,
                  insertbackground='brown',  # ДОБАВЛЯЕМ КУРСОР, УКАЗЫВАЕМ ЦВЕТ
                  selectbackground='#8D917A',  # ЦВЕТ ВЫДЕЛЕННОГО ТЕКСТА
                  spacing3=10,  # ДОБАВИЛИ ОТСТУПЫ У АБЗАЦЕВ
-                 width=30  # ШИРИНА СКРОЛЛБАРА
+                 width=30,  # ШИРИНА СКРОЛЛБАРА
+                 font='Arial 14 normal'
                  )
 text_fild.pack(fill=BOTH, expand=1, side=LEFT)  # 3. side=LEFT - выравнивание по левой стороне контейнера
 
