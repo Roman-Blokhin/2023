@@ -1,5 +1,16 @@
 from tkinter import *
 
+
+# ----------------------------- 11. ФУНКЦИИ -----------------------------
+
+# подключаем функцию к параметрам текстового поля, чтобы можно было менять
+def change_color(theme):
+    text_fild['bg'] = view_color[theme]['color_bg']
+    text_fild['fg'] = view_color[theme]['color_fg']
+    text_fild['insertbackground'] = view_color[theme]['color_cursor']
+    text_fild['selectbackground'] = view_color[theme]['color_select_bg']
+
+
 # ----------------------------- ОКНО -----------------------------
 
 # 1. создали основу для программы, окно
@@ -7,6 +18,20 @@ root = Tk()
 root.title('Блокнот')
 root.geometry('650x450+200+200')
 root.iconbitmap(default='logo.ico')
+
+# ----------------------------- 10. СЛОВАРЬ С ЦВЕТОВЫМИ ТЕМАМИ -----------------------------
+
+view_color = {  # прописываем словари с цветами по каждым параметрам в текстовом поле
+    'dark': {
+        'color_bg': 'black', 'color_fg': 'lime', 'color_cursor': 'brown', 'color_select_bg': '#8D917A'
+    },
+    'light': {
+        'color_bg': 'white', 'color_fg': 'black', 'color_cursor': 'red', 'color_select_bg': 'blue'
+    },
+    'grey': {
+        'color_bg': 'darkgrey', 'color_fg': 'white', 'color_cursor': 'black', 'color_select_bg': 'pink'
+    }
+}
 
 # ----------------------------- МЕНЮ -----------------------------
 
@@ -24,8 +49,9 @@ root.config(menu=file_menu)  # устанавливаем меню в наше �
 view_menu = Menu(main_menu, tearoff=0)
 
 view_menu_sub = Menu(view_menu, tearoff=0)
-view_menu_sub.add_command(label='Темная')
-view_menu_sub.add_command(label='Светлая')
+view_menu_sub.add_command(label='Темная', command=lambda: change_color('dark'))  # 11. прописываем команду
+view_menu_sub.add_command(label='Светлая', command=lambda: change_color('light'))
+view_menu_sub.add_command(label='Серая', command=lambda: change_color('grey'))
 view_menu.add_cascade(menu=view_menu_sub, label='Тема')
 
 font_menu_sub = Menu(view_menu, tearoff=0)
@@ -46,6 +72,7 @@ main_menu.add_cascade(label='Вид', menu=view_menu)  # 8. выводим ка�
 main_menu.add_cascade(label='Инфо', menu=info_menu)  # 9. выводим каскад меню на экран
 
 root.config(menu=main_menu)  # 5. устанавливаем меню в наше окно(всегда в конце)
+
 # ----------------------------- ФРЕЙМ(КОНТЕЙНЕР) -----------------------------
 
 f_text = Frame(root)  # 2. создали контейнер для текстового поля
