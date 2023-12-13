@@ -20,14 +20,20 @@ file_menu.add_separator()  # добавили полоску разделите�
 file_menu.add_command(label='Выход')
 root.config(menu=file_menu)  # устанавливаем меню в наше окно
 
-# 8.1 меню - Настройки
+# 8.1 меню - Вид
 view_menu = Menu(main_menu, tearoff=0)
+
 view_menu_sub = Menu(view_menu, tearoff=0)
 view_menu_sub.add_command(label='Темная')
 view_menu_sub.add_command(label='Светлая')
 view_menu.add_cascade(menu=view_menu_sub, label='Тема')
 
-# font_menu = Menu(settings_menu, tearoff=0)
+font_menu_sub = Menu(view_menu, tearoff=0)
+font_menu_sub.add_command(label='Arial')
+font_menu_sub.add_command(label='Comic Sans MS')
+font_menu_sub.add_command(label='Times New Roman')
+view_menu.add_cascade(menu=font_menu_sub, label='Шрифт')
+
 root.config(menu=view_menu)
 
 # 9.1 меню - Информация
@@ -36,8 +42,8 @@ info_menu.add_command(label='О нас')
 root.config(menu=info_menu)
 
 main_menu.add_cascade(label='Файл', menu=file_menu)  # 7. выводим каскад меню на экран
-main_menu.add_cascade(label='Настройки', menu=view_menu)  # 8. выводим каскад меню на экран
-main_menu.add_cascade(label='Информация', menu=info_menu)  # 9. выводим каскад меню на экран
+main_menu.add_cascade(label='Вид', menu=view_menu)  # 8. выводим каскад меню на экран
+main_menu.add_cascade(label='Инфо', menu=info_menu)  # 9. выводим каскад меню на экран
 
 root.config(menu=main_menu)  # 5. устанавливаем меню в наше окно(всегда в конце)
 # ----------------------------- ФРЕЙМ(КОНТЕЙНЕР) -----------------------------
