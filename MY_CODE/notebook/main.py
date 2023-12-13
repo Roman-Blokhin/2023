@@ -16,13 +16,19 @@ main_menu = Menu(root)  # 4. создаем главное меню
 file_menu = Menu(main_menu, tearoff=0)  # tearoff=0 - убирает ненужную пунктирную линию из меню
 file_menu.add_command(label='Открыть')  # добавляем слоты для команд
 file_menu.add_command(label='Сохранить')
+file_menu.add_separator()  # добавили полоску разделитель
 file_menu.add_command(label='Выход')
 root.config(menu=file_menu)  # устанавливаем меню в наше окно
 
 # 8.1 меню - Настройки
-settings_menu = Menu(main_menu, tearoff=0)
-settings_menu.add_command(label='Параметры')
-root.config(menu=settings_menu)
+view_menu = Menu(main_menu, tearoff=0)
+view_menu_sub = Menu(view_menu, tearoff=0)
+view_menu_sub.add_command(label='Темная')
+view_menu_sub.add_command(label='Светлая')
+view_menu.add_cascade(menu=view_menu_sub, label='Тема')
+
+# font_menu = Menu(settings_menu, tearoff=0)
+root.config(menu=view_menu)
 
 # 9.1 меню - Информация
 info_menu = Menu(main_menu, tearoff=0)
@@ -30,7 +36,7 @@ info_menu.add_command(label='О нас')
 root.config(menu=info_menu)
 
 main_menu.add_cascade(label='Файл', menu=file_menu)  # 7. выводим каскад меню на экран
-main_menu.add_cascade(label='Настройки', menu=settings_menu)  # 8. выводим каскад меню на экран
+main_menu.add_cascade(label='Настройки', menu=view_menu)  # 8. выводим каскад меню на экран
 main_menu.add_cascade(label='Информация', menu=info_menu)  # 9. выводим каскад меню на экран
 
 root.config(menu=main_menu)  # 5. устанавливаем меню в наше окно(всегда в конце)
