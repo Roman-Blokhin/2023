@@ -1,5 +1,6 @@
 from tkinter import *
-from tkinter import messagebox  # 13. чтобы получать всплывающие окна
+from tkinter import messagebox  # чтобы получать всплывающие окна
+from tkinter import filedialog  # чтобы открывать и сохранять файлы через меню
 
 
 # ----------------------------- ФУНКЦИИ -----------------------------
@@ -22,6 +23,15 @@ def notepad_exit():
     answer = messagebox.askokcancel('Выход', 'Выйти из программы?')
     if answer:
         root.destroy()
+
+
+# 14 Открытие файла через кнопку в меню
+def open_file():
+    filepath = filedialog.askopenfilename(
+        title='Выбор файла', filetypes=(('Текстовый документ', '*.txt'), ('Все файлы', '*.*'),))
+    if filepath:
+        text_fild.delete('1.0', END)
+        text_fild.insert('1.0', open(filepath, encoding='utf-8').read())
 
 
 # ----------------------------- ОКНО -----------------------------
@@ -67,7 +77,7 @@ main_menu = Menu(root)  # 4. создаем главное меню
 
 # 6.1 меню - Файл
 file_menu = Menu(main_menu, tearoff=0)  # tearoff=0 - убирает ненужную пунктирную линию из меню
-file_menu.add_command(label='Открыть')  # добавляем слоты для команд
+file_menu.add_command(label='Открыть', command=open_file)  # добавляем слоты для команд, пишем команду с функцией
 file_menu.add_command(label='Сохранить')
 file_menu.add_separator()  # добавили полоску разделитель
 file_menu.add_command(label='Выход', command=notepad_exit)
