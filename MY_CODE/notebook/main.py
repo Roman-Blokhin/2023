@@ -1,4 +1,5 @@
 from tkinter import *
+from tkinter import messagebox  # 13. чтобы получать всплывающие окна
 
 
 # ----------------------------- ФУНКЦИИ -----------------------------
@@ -14,6 +15,13 @@ def change_color(theme):
 # 12.1 подключаем шрифты к меню
 def change_font(fontss):
     text_fild['font'] = fonts[fontss]['font']
+
+
+# 13.1 пишем команду для выхода
+def notepad_exit():
+    answer = messagebox.askokcancel('Выход', 'Выйти из программы?')
+    if answer:
+        root.destroy()
 
 
 # ----------------------------- ОКНО -----------------------------
@@ -62,7 +70,7 @@ file_menu = Menu(main_menu, tearoff=0)  # tearoff=0 - убирает ненуж�
 file_menu.add_command(label='Открыть')  # добавляем слоты для команд
 file_menu.add_command(label='Сохранить')
 file_menu.add_separator()  # добавили полоску разделитель
-file_menu.add_command(label='Выход')
+file_menu.add_command(label='Выход', command=notepad_exit)
 root.config(menu=file_menu)  # устанавливаем меню в наше окно
 
 # 8.1 меню - Вид
