@@ -28,10 +28,21 @@ def notepad_exit():
 # 14 Открытие файла через кнопку в меню
 def open_file():
     filepath = filedialog.askopenfilename(
-        title='Выбор файла', filetypes=(('Текстовый документ', '*.txt'), ('Все файлы', '*.*'),))
+        title='Выбор файла', filetypes=(('Текстовый документ', '*.txt'), ('Все файлы', '*.*')))
     if filepath:
         text_fild.delete('1.0', END)
         text_fild.insert('1.0', open(filepath, encoding='utf-8').read())
+
+
+# 15 Сохранение файла
+
+def save_file():
+    filepath = filedialog.asksaveasfilename(  # обозначаем диалоговое окно для сохранения файла
+        title='Сохранить файл', filetypes=(('Текстовый документ', '*.txt'), ('Все файлы', '*.*')))
+    f = open(filepath, 'w', encoding='utf-8')  # открываем файл для записи
+    text = text_fild.get('1.0', END)  # получаем текст от первого символа до последнего
+    f.write(text)  # записываем файл с текстом - Сохраняем
+    f.close()  # завершение редактирования файла
 
 
 # ----------------------------- ОКНО -----------------------------
@@ -78,7 +89,7 @@ main_menu = Menu(root)  # 4. создаем главное меню
 # 6.1 меню - Файл
 file_menu = Menu(main_menu, tearoff=0)  # tearoff=0 - убирает ненужную пунктирную линию из меню
 file_menu.add_command(label='Открыть', command=open_file)  # добавляем слоты для команд, пишем команду с функцией
-file_menu.add_command(label='Сохранить')
+file_menu.add_command(label='Сохранить', command=save_file)
 file_menu.add_separator()  # добавили полоску разделитель
 file_menu.add_command(label='Выход', command=notepad_exit)
 root.config(menu=file_menu)  # устанавливаем меню в наше окно
