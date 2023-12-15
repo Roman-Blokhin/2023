@@ -1,6 +1,4 @@
-from tkinter import *
-from tkinter import messagebox  # чтобы получать всплывающие окна
-from tkinter import filedialog  # чтобы открывать и сохранять файлы через меню
+from button_new_window import *
 
 
 # ----------------------------- ФУНКЦИИ -----------------------------
@@ -89,6 +87,7 @@ main_menu = Menu(root)  # 4. создаем главное меню
 # 6.1 меню - Файл
 file_menu = Menu(main_menu, tearoff=0)  # tearoff=0 - убирает ненужную пунктирную линию из меню
 file_menu.add_command(label='Открыть', command=open_file)  # добавляем слоты для команд, пишем команду с функцией
+file_menu.add_command(label='Новое окно', command=new_window)
 file_menu.add_command(label='Сохранить', command=save_file)
 file_menu.add_separator()  # добавили полоску разделитель
 file_menu.add_command(label='Выход', command=notepad_exit)
