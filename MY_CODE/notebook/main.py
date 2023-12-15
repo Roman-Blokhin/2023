@@ -41,6 +41,7 @@ def save_file():
     f.write(text)  # записываем файл с текстом - Сохраняем
     f.close()  # завершение редактирования файла
 
+
 # 16 Функции для кнопок с параметром - Прозрачность
 def shadow_1():
     root.attributes("-alpha", 0.9)
@@ -56,6 +57,17 @@ def shadow_4():
 
 def shadow_5():
     root.attributes("-alpha", 0.5)
+
+
+# 17 Информация о нас с кнопкой закрытия окна
+def about():
+    def close_about():
+        frame_about.destroy()
+
+    frame_about = Frame(text_fild, borderwidth=100)
+    frame_about.pack(anchor=CENTER, expand=1)
+    Label(frame_about, text='Roman is a hero', bg='white', fg='black').pack(anchor=CENTER)
+    Button(frame_about, text='Закрыть', command=close_about).pack()
 
 
 # ----------------------------- ОКНО -----------------------------
@@ -140,7 +152,7 @@ root.config(menu=view_menu)
 
 # 9.1 меню - Информация
 info_menu = Menu(main_menu, tearoff=0)
-info_menu.add_command(label='О нас')
+info_menu.add_command(label='О нас', command=about)
 root.config(menu=info_menu)
 
 main_menu.add_cascade(label='Файл', menu=file_menu)  # 7. выводим каскад меню на экран
@@ -149,7 +161,7 @@ main_menu.add_cascade(label='Инфо', menu=info_menu)  # 9. выводим к�
 
 root.config(menu=main_menu)  # 5. устанавливаем меню в наше окно(всегда в конце)
 
-# ----------------------------- ФРЕЙМ(КОНТЕЙНЕР) -----------------------------
+# ----------------------------- ФРЕЙМ(КОНТЕЙНЕР ДЛЯ ТЕКСТОВОГО ПОЛЯ) -----------------------------
 
 f_text = Frame(root)  # 2. создали контейнер для текстового поля
 f_text.pack(fill=BOTH,  # растягивание по сторонам х и у
