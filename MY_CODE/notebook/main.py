@@ -33,7 +33,6 @@ def open_file():
 
 
 # 15 Сохранение файла
-
 def save_file():
     filepath = filedialog.asksaveasfilename(  # обозначаем диалоговое окно для сохранения файла
         title='Сохранить файл', filetypes=(('Текстовый документ', '*.txt'), ('Все файлы', '*.*')))
@@ -41,6 +40,22 @@ def save_file():
     text = text_fild.get('1.0', END)  # получаем текст от первого символа до последнего
     f.write(text)  # записываем файл с текстом - Сохраняем
     f.close()  # завершение редактирования файла
+
+# 16 Функции для кнопок с параметром - Прозрачность
+def shadow_1():
+    root.attributes("-alpha", 0.9)
+
+def shadow_2():
+    root.attributes("-alpha", 0.8)
+
+def shadow_3():
+    root.attributes("-alpha", 0.7)
+
+def shadow_4():
+    root.attributes("-alpha", 0.6)
+
+def shadow_5():
+    root.attributes("-alpha", 0.5)
 
 
 # ----------------------------- ОКНО -----------------------------
@@ -98,17 +113,28 @@ root.config(menu=file_menu)  # устанавливаем меню в наше �
 # 8.1 меню - Вид
 view_menu = Menu(main_menu, tearoff=0)
 
+# 8.2 Тема
 view_menu_sub = Menu(view_menu, tearoff=0)
 view_menu_sub.add_command(label='Темная', command=lambda: change_color('dark'))  # 11.1 прописываем команду
 view_menu_sub.add_command(label='Светлая', command=lambda: change_color('light'))
 view_menu_sub.add_command(label='Серая', command=lambda: change_color('grey'))
 view_menu.add_cascade(menu=view_menu_sub, label='Тема')
 
+# 8.3 Шрифт
 font_menu_sub = Menu(view_menu, tearoff=0)
 font_menu_sub.add_command(label='Arial', command=lambda: change_font('Arial'))
 font_menu_sub.add_command(label='Comic Sans MS', command=lambda: change_font('Comic Sans MS'))
 font_menu_sub.add_command(label='Times New Roman', command=lambda: change_font('Times New Roman'))
 view_menu.add_cascade(menu=font_menu_sub, label='Шрифт')
+
+# 16.1 Прозрачность
+shadow_menu_sub = Menu(view_menu, tearoff=0)
+shadow_menu_sub.add_command(label='10%', command=shadow_1)
+shadow_menu_sub.add_command(label='20%', command=shadow_2)
+shadow_menu_sub.add_command(label='30%', command=shadow_3)
+shadow_menu_sub.add_command(label='40%', command=shadow_4)
+shadow_menu_sub.add_command(label='50%', command=shadow_5)
+view_menu.add_cascade(menu=shadow_menu_sub, label='Прозрачность')
 
 root.config(menu=view_menu)
 
